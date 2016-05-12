@@ -7,17 +7,17 @@
  */
 namespace RainbowPHP\Core;
 
-class application
+class Application
 {
     /**
-     * The Laravel framework version.
+     * The RainbowPHP framework version.
      *
      * @var string
      */
     const VERSION = '0.0.1';
 
     /**
-     * The base path for the Laravel installation.
+     * The base path for the RainbowPHP installation.
      *
      * @var string
      */
@@ -112,7 +112,7 @@ class application
      *
      * @var string
      */
-    protected $environmentFile = '.env';
+    protected $environmentFile = 'config.php';
 
     /**
      * The application namespace.
@@ -120,6 +120,12 @@ class application
      * @var string
      */
     protected $namespace = null;
+    /**
+     * The application namespace.
+     *
+     * @var string
+     */
+    protected $middleware = null;
 
     /**
      * Create a new Illuminate application instance.
@@ -129,12 +135,23 @@ class application
      */
     public function __construct($basePath = null)
     {
-
-
-
         if ($basePath) {
             $this->setBasePath($basePath);
         }
+    }
+
+    public function beforeMiddleWare(){
+
+        $this->middleware=include_once $this->basePath().'config/middleWare.php';
+
+        foreach($this->middleware['before'] as $key => $val){
+
+            eval($key.'->'.$val);
+
+        }
+
+
+
     }
 
     /**
@@ -280,7 +297,7 @@ class application
     }
 
     /**
-     * Get the base path of the Laravel installation.
+     * Get the base path of the RainbowPHP installation.
      *
      * @return string
      */

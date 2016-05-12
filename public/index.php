@@ -5,9 +5,11 @@
  * Date: 16/4/29
  * Time: 下午2:39
  */
+$config = include __DIR__.'/../env.php';
 
-define('ENVIRONMENT', 'development');
-function classLoader($class_name) {
+//var_dump($config);
+
+/*function classLoader($class_name) {
     echo 'SPL load class:', $class_name, '<br />';
 }
 set_include_path(realpath(__DIR__.'/../vendor/RainbowPHP'). "/Core/");
@@ -15,7 +17,7 @@ set_include_path(realpath(__DIR__.'/../vendor/RainbowPHP'). "/Core/");
 
 spl_autoload_register();
 
-echo get_include_path();
+echo get_include_path();*/
 //echo env('APP_KEY');
 /*
  *---------------------------------------------------------------
@@ -26,10 +28,10 @@ echo get_include_path();
  * By default development will show errors but testing and live will hide them.
  */
 
-if (defined('ENVIRONMENT')) {
-    switch (ENVIRONMENT) {
+if (in_array('ENVIRONMENT',$config)) {
+    switch ($config['ENVIRONMENT']) {
         case 'development' :
-            error_reporting(E_ALL);
+            error_reporting(7);
             break;
 
         case 'testing' :
@@ -52,17 +54,23 @@ if (defined('ENVIRONMENT')) {
 | 加载系统 启动项
 |--------------------------------------------------------------------------
 */
+include __DIR__.'/../vendor/RainbowPHP/Helpers/Common.php';
 
-$app = new application(realpath(__DIR__.'../'));
+include __DIR__.'/../vendor/RainbowPHP/Core/application.class.php';
+$app = new \RainbowPHP\Core\Application(realpath(__DIR__.'/../'));
+
+var_dump($app);
 
 /*
 |--------------------------------------------------------------------------
-| 启动主程序
+| 检查中间件
 |--------------------------------------------------------------------------
 |
 */
-
-$kernel = $app->make();
+set_error_handler('_error_handler');
+set_exception_handler('_exception_handler');
+register_shutdown_function('_shutdown_handler');
+$kernel = $app->beforeMiddleWare();
 
 /*
 |--------------------------------------------------------------------------

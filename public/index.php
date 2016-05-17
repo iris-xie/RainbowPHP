@@ -28,9 +28,9 @@ echo get_include_path();*/
  * By default development will show errors but testing and live will hide them.
  */
 
-if (in_array('ENVIRONMENT',$config)) {
+
     switch ($config['ENVIRONMENT']) {
-        case 'development' :
+        case 'dev' :
             error_reporting(7);
             break;
 
@@ -42,7 +42,7 @@ if (in_array('ENVIRONMENT',$config)) {
         default :
             exit('The application environment is not set correctly.');
     }
-}
+
 /**
  * RainbowPHP - A PHP Framework cut from laravel
  * @package  RainbowPHP
@@ -54,12 +54,12 @@ if (in_array('ENVIRONMENT',$config)) {
 | 加载系统 启动项
 |--------------------------------------------------------------------------
 */
-include __DIR__.'/../vendor/RainbowPHP/Helpers/Common.php';
+//include __DIR__.'/../vendor/RainbowPHP/Helpers/Common.php';
 
-include __DIR__.'/../vendor/RainbowPHP/Core/application.class.php';
-$app = new \RainbowPHP\Core\Application(realpath(__DIR__.'/../'));
+//include __DIR__.'/../vendor/RainbowPHP/Core/application.class.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-var_dump($app);
+$app = new RainbowPHP\Core\Application(realpath(__DIR__.'/../'));
 
 /*
 |--------------------------------------------------------------------------
@@ -67,9 +67,20 @@ var_dump($app);
 |--------------------------------------------------------------------------
 |
 */
-set_error_handler('_error_handler');
-set_exception_handler('_exception_handler');
-register_shutdown_function('_shutdown_handler');
+if($config['safety']=='on'){
+    ini_set('magic_quotes_runtime', 1);
+}else{
+    ini_set('magic_quotes_runtime', 0);
+}
+
+
+
+set_error_handler('RainbowError');
+
+set_exception_handler('RainbowException');
+
+register_shutdown_function('RainbowShutdown');
+
 $kernel = $app->beforeMiddleWare();
 
 /*

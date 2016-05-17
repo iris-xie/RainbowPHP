@@ -142,11 +142,14 @@ class Application
 
     public function beforeMiddleWare(){
 
-        $this->middleware=include_once $this->basePath().'config/middleWare.php';
+        $this->middleware=include_once $this->basePath().'/config/middleWare.php';
 
         foreach($this->middleware['before'] as $key => $val){
 
-            eval($key.'->'.$val);
+            var_dump($key.'->'.$val.'()');
+
+            $app = eval('new '.$key.';');
+            eval($app.'->'.$val.'()'.';');
 
         }
 

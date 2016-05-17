@@ -1,0 +1,30 @@
+{
+  "name": "RainbowPHP/RainbowPHP",
+  "description": "The RainbowPHP Framework.",
+  "keywords": [
+    "framework",
+    "RainbowPHP"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "laravel/framework": "4.2.*"
+  },
+  "autoload": {
+    "files": ["vendor/RainbowPHP/Helpers/Common.php","vendor/RainbowPHP/Helpers/Helpers.php"],
+    "psr-4": {
+      "RainbowPHP\\": "vendor/RainbowPHP/",
+      "App\\": "app/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "stable",
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}

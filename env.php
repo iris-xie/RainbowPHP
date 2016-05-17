@@ -6,4 +6,7 @@
  * Time: 21:29
  */
 
-return array('ENVIRONMENT'=>'dev');
+return array(
+    'ENVIRONMENT'=>'dev',
+    'safety'=>'on'
+);

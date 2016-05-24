@@ -10,4 +10,8 @@ return array(
     'before'=>array(
     '\App\MiddleWare\Oauth'=>'checkOauth',
 
-));
+        ),
+
+
+
+);

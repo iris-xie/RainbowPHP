@@ -146,10 +146,9 @@ class Application
 
         foreach($this->middleware['before'] as $key => $val){
 
-            var_dump($key.'->'.$val.'()');
 
-            $app = eval('new '.$key.';');
-            eval($app.'->'.$val.'()'.';');
+            $app = new $key();
+            $app->$val();
 
         }
 

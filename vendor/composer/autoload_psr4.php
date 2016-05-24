@@ -6,10 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
-    'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'RainbowPHP\\' => array($vendorDir . '/RainbowPHP'),
-    'Patchwork\\' => array($vendorDir . '/patchwork/utf8/src/Patchwork'),
-    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
     'App\\' => array($baseDir . '/app'),
 );

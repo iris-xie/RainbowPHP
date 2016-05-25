@@ -7,11 +7,16 @@ namespace Composer\Autoload;
 class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'd1bb139b4b389b8724404a5ddb89665c' => __DIR__ . '/..' . '/RainbowPHP/Helpers/Common.php',
         '7bcc37183516d75761256f91aace6b9a' => __DIR__ . '/..' . '/RainbowPHP/Helpers/Helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+        ),
         'R' => 
         array (
             'RainbowPHP\\' => 11,
@@ -27,6 +32,10 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
         'RainbowPHP\\' => 
         array (
             0 => __DIR__ . '/..' . '/RainbowPHP',
@@ -41,11 +50,22 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitf72313063b452e8bb06f99af784f61b1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf72313063b452e8bb06f99af784f61b1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf72313063b452e8bb06f99af784f61b1::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

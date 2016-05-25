@@ -8,7 +8,8 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "noahbuscher/macaw": "dev-master"
+    "noahbuscher/macaw": "dev-master",
+    "twig/twig": "dev-master"
   },
   "autoload": {
     "files": ["vendor/RainbowPHP/Helpers/Common.php","vendor/RainbowPHP/Helpers/Helpers.php"],

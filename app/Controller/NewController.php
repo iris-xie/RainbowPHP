@@ -6,12 +6,19 @@
  * Time: 22:09
  */
 namespace App\Controller;
-class NewController{
+use RainbowPHP\Core\RainbowController;
 
+class NewController extends RainbowController{
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function index(){
 
         echo 's21312s';
+
+        echo $this->twig->render('test.html.twig', array('the' => 'variables', 'go' => 'here'));
     }
 }

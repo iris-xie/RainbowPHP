@@ -15,7 +15,7 @@ use NoahBuscher\Macaw\Macaw;
 });*/
 Macaw::get('/fuck', 'App\Controller\NewController@index');
 
-Macaw::get('/wqeq/(:all)', function($fu) {
+Macaw::get('/w/(:all)', function($fu) {
     echo '未匹配到路由<br>'.$fu;
 });
 

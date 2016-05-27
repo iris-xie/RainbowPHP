@@ -6,7 +6,7 @@
  * Time: 21:29
  */
 
-return array(
-    'ENVIRONMENT'=>'dev',
-    'safety'=>'on'
-);
+$config['auto_load'] = ['view','database','session','redis'];
+$config['ENVIRONMENT'] = 'dev';
+$config['safety'] = 'on';
+return $config;

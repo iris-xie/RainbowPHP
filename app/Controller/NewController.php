@@ -7,7 +7,7 @@
  */
 namespace App\Controller;
 use RainbowPHP\Core\RainbowController;
-
+use App\Models\PeopleModel;
 class NewController extends RainbowController{
 
     public function __construct()
@@ -18,6 +18,9 @@ class NewController extends RainbowController{
     public function index(){
 
         echo 's21312s';
+
+        $INF0= PeopleModel::getOne(1);
+        var_dump($INF0);
 
         echo $this->twig->render('test.html.twig', array('the' => 'variables', 'go' => 'here'));
     }

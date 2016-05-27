@@ -8,6 +8,8 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
+        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         'd1bb139b4b389b8724404a5ddb89665c' => __DIR__ . '/..' . '/RainbowPHP/Helpers/Common.php',
         '7bcc37183516d75761256f91aace6b9a' => __DIR__ . '/..' . '/RainbowPHP/Helpers/Helpers.php',
     );
@@ -16,6 +18,8 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\Translation\\' => 30,
+            'Stringy\\' => 8,
         ),
         'R' => 
         array (
@@ -24,6 +28,17 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
         'N' => 
         array (
             'NoahBuscher\\Macaw\\' => 18,
+        ),
+        'I' => 
+        array (
+            'Illuminate\\Support\\' => 19,
+            'Illuminate\\Database\\' => 20,
+            'Illuminate\\Contracts\\' => 21,
+            'Illuminate\\Container\\' => 21,
+        ),
+        'C' => 
+        array (
+            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -36,6 +51,14 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Stringy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
+        ),
         'RainbowPHP\\' => 
         array (
             0 => __DIR__ . '/..' . '/RainbowPHP',
@@ -43,6 +66,26 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
         'NoahBuscher\\Macaw\\' => 
         array (
             0 => __DIR__ . '/..' . '/noahbuscher/macaw',
+        ),
+        'Illuminate\\Support\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Database\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/database',
+        ),
+        'Illuminate\\Contracts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/contracts',
+        ),
+        'Illuminate\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/container',
+        ),
+        'Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
         'App\\' => 
         array (
@@ -56,6 +99,13 @@ class ComposerStaticInitf72313063b452e8bb06f99af784f61b1
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Inflector\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
             ),
         ),
     );

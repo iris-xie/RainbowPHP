@@ -9,6 +9,7 @@
   "type": "project",
   "require": {
     "noahbuscher/macaw": "dev-master",
+    "illuminate/database": "*",
     "twig/twig": "dev-master"
   },
   "autoload": {
@@ -16,7 +17,7 @@
     "psr-4": {
       "RainbowPHP\\": "vendor/RainbowPHP/",
       "App\\": "app/"
-    }
+  }
   },
   "config": {
     "preferred-install": "dist"

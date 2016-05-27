@@ -6,6 +6,7 @@
  * Time: 下午2:39
  */
 $config = include __DIR__.'/../env.php';
+global $config;
 define(BASE_PATH,dirname(dirname(__FILE__)));
 
 echo BASE_PATH;

@@ -8,23 +8,21 @@
 namespace RainbowPHP\Core;
 class RainbowController{
 
-    public $twig;
-
+    public $view;
+    public $database;
+    
     public function __construct()
     {
+        if(in_array('view',$config['auto_load'])){
         //require_once BASE_PATH.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'twig'.DIRECTORY_SEPARATOR.'twig'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'Twig'.DIRECTORY_SEPARATOR.'Autoloader.php';
         $loader = new \Twig_Loader_Filesystem(BASE_PATH.'/resources/views/');
-        $twig = new \Twig_Environment($loader, array(
-            //'cache' => BASE_PATH.'/cache/',
-        ));
-        $this->twig=$twig;
-
+        $twig = new \Twig_Environment($loader, []));
+        $this->view=$twig;
+        }
     }
-
-    public function __debugInfo()
+    
+    public function __callstatic($name,$arguments)
     {
-        // TODO: Implement __debugInfo() method.
+     return call_user_func_array(__CLASS__,$name,$arguments);  
     }
-
-
 }

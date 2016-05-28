@@ -6,6 +6,9 @@
  * Time: 下午2:52
  */
 namespace RainbowPHP\Core;
+use App\Config\Config_middleware;
+use App\Config\Config_sys;
+use RainbowPHP\Helpers\RainbowHelpers;
 
 class Application
 {
@@ -138,22 +141,91 @@ class Application
         if ($basePath) {
             $this->setBasePath($basePath);
         }
+        //echo time().microtime();
+        $this->booted = true;
+
+        $this->setEnv();
     }
 
-    public function beforeMiddleWare(){
+    public function setEnv(){
 
-        $this->middleware=include_once $this->basePath().'/config/middleWare.php';
+        switch (Config_sys::$env) {
+            case 'dev' :
+                error_reporting(7);
+                break;
 
-        foreach($this->middleware['before'] as $key => $val){
+            case 'testing' :
+            case 'production' :
+                error_reporting(0);
+                break;
 
+            default :
+                exit('The application environment is not set correctly.');
+        }
+        //echo time().microtime();
+        if(Config_sys::$safety=='on'){
+            ini_set('magic_quotes_runtime', 1);
+        }else{
+            ini_set('magic_quotes_runtime', 0);
+        }
 
-            $app = new $key();
-            $app->$val();
+        $charset = Config_sys::$charset;
+        ini_set('default_charset', $charset);
+        if (extension_loaded('mbstring'))
+        {
+            if(!defined('MB_ENABLED'))define('MB_ENABLED', TRUE);
+            // mbstring.internal_encoding is deprecated starting with PHP 5.6
+            // and it's usage triggers E_DEPRECATED messages.
+            @ini_set('mbstring.internal_encoding', $charset);
+            // This is required for mb_convert_encoding() to strip invalid characters.
+            // That's utilized by CI_Utf8, but it's also done for consistency with iconv.
+            mb_substitute_character('none');
+        }
+        else
+        {
+            if(!defined('MB_ENABLED'))define('MB_ENABLED', FALSE);
+        }
 
+// There's an ICONV_IMPL constant, but the PHP manual says that using
+// iconv's predefined constants is "strongly discouraged".
+        if (extension_loaded('iconv'))
+        {
+            if(!defined('ICONV_ENABLED'))define('ICONV_ENABLED', TRUE);
+            // iconv.internal_encoding is deprecated starting with PHP 5.6
+            // and it's usage triggers E_DEPRECATED messages.
+            @ini_set('iconv.internal_encoding', $charset);
+        }
+        else
+        {
+            if(!defined('ICONV_ENABLED'))define('ICONV_ENABLED', FALSE);
+        }
+
+        if (is_php('5.6'))
+        {
+            ini_set('php.internal_encoding', $charset);
         }
 
 
+        set_error_handler('RainbowError');
 
+        set_exception_handler('RainbowException');
+
+        register_shutdown_function('RainbowShutdown');
+
+        echo '系统实例化加载完成<br/>';
+    }
+
+    public function beforeSysMiddleWare(){
+
+        $this->beforeSysMiddleWare=Config_middleware::$beforeSys;
+
+        foreach(Config_middleware::$beforeSys as $val){
+
+            RainbowHelpers::runRoute($val);
+
+        }
+
+        echo '系统前中间件加载完成<br/>';
     }
 
     /**
@@ -167,98 +239,6 @@ class Application
     }
 
     /**
-     * Register the basic bindings into the container.
-     *
-     * @return void
-     */
-    protected function registerBaseBindings()
-    {
-        static::setInstance($this);
-
-        $this->instance('app', $this);
-
-        $this->instance('Illuminate\Container\Container', $this);
-    }
-
-    /**
-     * Register all of the base service providers.
-     *
-     * @return void
-     */
-    protected function registerBaseServiceProviders()
-    {
-        $this->register(new EventServiceProvider($this));
-
-        $this->register(new RoutingServiceProvider($this));
-    }
-
-    /**
-     * Run the given array of bootstrap classes.
-     *
-     * @param  array  $bootstrappers
-     * @return void
-     */
-    public function bootstrapWith(array $bootstrappers)
-    {
-        $this->hasBeenBootstrapped = true;
-
-        foreach ($bootstrappers as $bootstrapper) {
-            $this['events']->fire('bootstrapping: '.$bootstrapper, [$this]);
-
-            $this->make($bootstrapper)->bootstrap($this);
-
-            $this['events']->fire('bootstrapped: '.$bootstrapper, [$this]);
-        }
-    }
-
-    /**
-     * Register a callback to run after loading the environment.
-     *
-     * @param  \Closure  $callback
-     * @return void
-     */
-    public function afterLoadingEnvironment(Closure $callback)
-    {
-        return $this->afterBootstrapping(
-            'Illuminate\Foundation\Bootstrap\DetectEnvironment', $callback
-        );
-    }
-
-    /**
-     * Register a callback to run before a bootstrapper.
-     *
-     * @param  string  $bootstrapper
-     * @param  Closure  $callback
-     * @return void
-     */
-    public function beforeBootstrapping($bootstrapper, Closure $callback)
-    {
-        $this['events']->listen('bootstrapping: '.$bootstrapper, $callback);
-    }
-
-    /**
-     * Register a callback to run after a bootstrapper.
-     *
-     * @param  string  $bootstrapper
-     * @param  Closure  $callback
-     * @return void
-     */
-    public function afterBootstrapping($bootstrapper, Closure $callback)
-    {
-        $this['events']->listen('bootstrapped: '.$bootstrapper, $callback);
-    }
-
-    /**
-     * Determine if the application has been bootstrapped before.
-     *
-     * @return bool
-     */
-    public function hasBeenBootstrapped()
-    {
-        return $this->hasBeenBootstrapped;
-    }
-
-    /**
      * Set the base path for the application.
      *
      * @param  string  $basePath
@@ -269,23 +249,6 @@ class Application
         $this->basePath = rtrim($basePath, '\/');
 
         return $this;
-    }
-
-    /**
-     * Bind all of the application paths in the container.
-     *
-     * @return void
-     */
-    protected function bindPathsInContainer()
-    {
-        $this->instance('path', $this->path());
-        $this->instance('path.base', $this->basePath());
-        $this->instance('path.lang', $this->langPath());
-        $this->instance('path.config', $this->configPath());
-        $this->instance('path.public', $this->publicPath());
-        $this->instance('path.storage', $this->storagePath());
-        $this->instance('path.database', $this->databasePath());
-        $this->instance('path.bootstrap', $this->bootstrapPath());
     }
 
     /**
@@ -309,58 +272,13 @@ class Application
     }
 
     /**
-     * Get the path to the bootstrap directory.
-     *
-     * @return string
-     */
-    public function bootstrapPath()
-    {
-        return $this->basePath.DIRECTORY_SEPARATOR.'bootstrap';
-    }
-
-    /**
      * Get the path to the application configuration files.
      *
      * @return string
      */
     public function configPath()
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'config';
-    }
-
-    /**
-     * Get the path to the database directory.
-     *
-     * @return string
-     */
-    public function databasePath()
-    {
-        return $this->databasePath ?: $this->basePath.DIRECTORY_SEPARATOR.'database';
-    }
-
-    /**
-     * Set the database directory.
-     *
-     * @param  string  $path
-     * @return $this
-     */
-    public function useDatabasePath($path)
-    {
-        $this->databasePath = $path;
-
-        $this->instance('path.database', $path);
-
-        return $this;
-    }
-
-    /**
-     * Get the path to the language files.
-     *
-     * @return string
-     */
-    public function langPath()
-    {
-        return $this->basePath.DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR.'lang';
+        return $this->basePath.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'config';
     }
 
     /**
@@ -381,21 +299,6 @@ class Application
     public function storagePath()
     {
         return $this->storagePath ?: $this->basePath.DIRECTORY_SEPARATOR.'storage';
-    }
-
-    /**
-     * Set the storage directory.
-     *
-     * @param  string  $path
-     * @return $this
-     */
-    public function useStoragePath($path)
-    {
-        $this->storagePath = $path;
-
-        $this->instance('path.storage', $path);
-
-        return $this;
     }
 
     /**
@@ -485,29 +388,6 @@ class Application
     public function isLocal()
     {
         return $this['env'] == 'local';
-    }
-
-    /**
-     * Detect the application's current environment.
-     *
-     * @param  \Closure  $callback
-     * @return string
-     */
-    public function detectEnvironment(Closure $callback)
-    {
-        $args = isset($_SERVER['argv']) ? $_SERVER['argv'] : null;
-
-        return $this['env'] = (new EnvironmentDetector())->detect($callback, $args);
-    }
-
-    /**
-     * Determine if we are running in the console.
-     *
-     * @return bool
-     */
-    public function runningInConsole()
-    {
-        return php_sapi_name() == 'cli';
     }
 
     /**
@@ -946,6 +826,7 @@ class Application
     {
         return $this->deferredServices;
     }
+
 
     /**
      * Set the application's deferred services.

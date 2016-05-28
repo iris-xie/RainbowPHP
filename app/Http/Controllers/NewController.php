@@ -5,9 +5,9 @@
  * Date: 2016/5/24
  * Time: 22:09
  */
-namespace App\Controller;
+namespace App\Http\Controllers;
 use RainbowPHP\Core\RainbowController;
-use App\Models\PeopleModel;
+use App\Http\Models\PeopleModel;
 class NewController extends RainbowController{
 
     public function __construct()
@@ -19,9 +19,14 @@ class NewController extends RainbowController{
 
         echo 's21312s';
 
-        $INF0= PeopleModel::getOne(1);
-        var_dump($INF0);
+        //echo time().microtime();
 
-        echo $this->twig->render('test.html.twig', array('the' => 'variables', 'go' => 'here'));
+        $INF0= PeopleModel::getOne(1);
+        echo '获取数据';
+        //echo time().microtime();
+
+        echo $this->view->render('test.html.twig', array('the' => 'variables', 'go' => 'here'));
+        //echo time().microtime();
+
     }
 }

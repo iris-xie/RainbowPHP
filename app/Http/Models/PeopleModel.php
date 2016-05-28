@@ -5,7 +5,7 @@
  * Date: 2016/5/27
  * Time: 0:29
  */
-namespace App\Models;
+namespace App\Http\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class PeopleModel extends Model{

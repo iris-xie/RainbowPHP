@@ -1,13 +1,12 @@
-<?php
-/**
+<?/**
  * Created by PhpStorm.
  * User: asus
  * Date: 2016/5/12
  * Time: 0:08
  */
-namespace App\MiddleWare;
+namespace App\MiddleWares;
 
-class oauth{
+class Oauth{
 
 
     function __call($name, $arguments)
@@ -17,8 +16,7 @@ class oauth{
 
     function checkOauth()
     {
-        echo '1111';
+        echo '系统前中间件加载完成<br/>';
         return true;
-
     }
 }

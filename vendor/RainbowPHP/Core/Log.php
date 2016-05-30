@@ -11,6 +11,8 @@ class log
    
    private static $log_type = '';
    
+   private static $_instance;
+   
    //logrotate   single
    private static $log_con = '';
 
@@ -19,7 +21,7 @@ class log
    //日志文件路径
    private static $log_paths = array();
    
-   public function __construct()
+   private function __construct()
    {
       self::$log_type = Config_sys::log['log_type'];
       
@@ -28,6 +30,13 @@ class log
       self::$base_path = Config_sys::log['file_path'];
 
    }
+   
+    public static function getInstance() {
+        if (empty(self::$_instance)) {
+            self::$_instance = new __CLASS__();
+        }
+        return self::$_instance;
+    }
    
    /**
     * 增加一条日志记录(并不会马上保存，由系统结束运行时调用 log::save 方法保存)
@@ -38,8 +47,6 @@ class log
     * @parem $msg  日志信息
     * @return void
     */
-    
-    
     public function add($log_name, $msg)
     {
         if(is_array($msg)){
@@ -76,6 +83,7 @@ class log
                @chmod($log_file, 0766);
             //file_put_contents($log_file, $msgs, FILE_APPEND);
             self::$logs = [];
+            self::$_instance = [];
         }
     }
     

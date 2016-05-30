@@ -22,7 +22,7 @@ class NewController extends RainbowController{
 
         //echo time().microtime();
 
-        $INF0= PeopleModel::getOne(1);
+        //$INF0= PeopleModel::getOne(1);
         echo '<br/>获取数据<br/>';
         $log = Log::getInstance();
 

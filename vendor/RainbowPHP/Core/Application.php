@@ -8,7 +8,7 @@
 namespace RainbowPHP\Core;
 use App\Config\Config_middleware;
 use App\Config\Config_sys;
-use RainbowPHP\Helpers\RainbowHelpers;
+use RainbowPHP\Core\Router;
 use RainbowPHP\Core\Log;
 class Application
 {
@@ -109,6 +109,10 @@ class Application
      */
     protected $env = null;
     protected $safety = null;
+    protected $charset = null;
+    protected $beforeSysMiddleWare;
+    protected $afterSysMiddleWare;
+
 
     /**
      * Create a new Illuminate application instance.
@@ -122,7 +126,7 @@ class Application
             $this->setBasePath($basePath);
         }
         
-        $this -> run();
+        $this -> init();
         
     }
     /**
@@ -130,7 +134,7 @@ class Application
      *
      * @return void
      */
-    public function run()
+    public function init()
     {
         if ($this->booted) {
             return;
@@ -139,17 +143,17 @@ class Application
         $this->booted = true;
 
         $this->setEnv();
-        
+
         $this->setSafetyMod();
-        
+
         $this->setCharset();
-        
+
         $this->setHandler();
-        
+
         //$this->LogConfig = Config_sys::log;
         //初始化log类
         Log::getInstance();
-       
+
     }
     protected function setEnv(){
         
@@ -167,10 +171,10 @@ class Application
                 break;
 
             default :
-                throw WrongConfigException('The application environment is not set correctly.');
+                //throw WrongConfigException('The application environment is not set correctly.');
         }
     } 
-    protected function setEnv(){
+    protected function getEnv(){
     
         return $this -> env;
     }
@@ -188,10 +192,11 @@ class Application
     }
     protected function setCharset()
     {
-                //echo time().microtime();
+
         $this -> charset = Config_sys::$charset;
 
         ini_set('default_charset',  $this -> charset);
+
         if (extension_loaded('mbstring'))
         {
             if(!defined('MB_ENABLED'))define('MB_ENABLED', TRUE);
@@ -207,8 +212,6 @@ class Application
             if(!defined('MB_ENABLED'))define('MB_ENABLED', FALSE);
         }
 
-// There's an ICONV_IMPL constant, but the PHP manual says that using
-// iconv's predefined constants is "strongly discouraged".
         if (extension_loaded('iconv'))
         {
             if(!defined('ICONV_ENABLED'))define('ICONV_ENABLED', TRUE);
@@ -219,11 +222,6 @@ class Application
         else
         {
             if(!defined('ICONV_ENABLED'))define('ICONV_ENABLED', FALSE);
-        }
-
-        if (is_php('5.6'))
-        {
-            ini_set('php.internal_encoding',  $this -> charset);
         }
 
     }
@@ -240,17 +238,28 @@ class Application
 
     public function beforeSysMiddleWare(){
 
-        $this->beforeSysMiddleWare=Config_middleware::$beforeSys;
+        $this->beforeSysMiddleWare = (array)Config_middleware::$beforeSys;
 
-        foreach(Config_middleware::$beforeSys as $val){
+        foreach($this->beforeSysMiddleWare as $val){
 
-            RainbowHelpers::runRoute($val);
+            Router::runRoute($val);
 
         }
 
         echo '系统前中间件加载完成<br/>';
     }
+    public function afterSysMiddleWare(){
 
+        $this->afterSysMiddleWare =(array) Config_middleware::$afterSys;
+
+        foreach($this->afterSysMiddleWare as $val){
+
+            Router::runRoute($val);
+
+        }
+
+        echo '系统后中间件加载完成<br/>';
+    }
     /**
      * Get the version number of the application.
      *
@@ -488,7 +497,10 @@ class Application
      */
     public function terminate()
     {
-     
+        $log = Log::getInstance();
+
+        $log ->save();
+
     }
 
     /**

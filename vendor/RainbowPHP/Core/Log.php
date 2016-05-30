@@ -1,6 +1,7 @@
+<?php
 namespace RainbowPHP\Core;
 use App\Config\Config_sys;
-class log
+class Log
 {
     
    //日志记录内存变量
@@ -8,9 +9,7 @@ class log
    
    //日志文件类型（默认file）
    private static $log_type = 'file';
-   
-   private static $log_type = '';
-   
+
    private static $_instance;
    
    //logrotate   single
@@ -23,17 +22,17 @@ class log
    
    private function __construct()
    {
-      self::$log_type = Config_sys::log['log_type'];
+      self::$log_type = Config_sys::$log['log_type'];
       
-      self::$log_con = Config_sys::log['log_con'];
+      self::$log_con = Config_sys::$log['log_con'];
 
-      self::$base_path = Config_sys::log['file_path'];
+      self::$base_path = Config_sys::$base_path.Config_sys::$log['file_path'];
 
    }
    
     public static function getInstance() {
         if (empty(self::$_instance)) {
-            self::$_instance = new __CLASS__();
+            self::$_instance = new self;
         }
         return self::$_instance;
     }
@@ -47,14 +46,15 @@ class log
     * @parem $msg  日志信息
     * @return void
     */
-    public function add($log_name, $msg)
+    public function add($msg,$type='INFO',$log_name='')
     {
+        if(empty($log_name)) $log_name = Config_sys::$log['log_default'];
         if(is_array($msg)){
-            $new_msg = strupper($log_name).': '.join(','$msg).'--'.date('Y-m-d H:i:s',time()).PHP_EOL;
+            $new_msg = strtoupper($type).': '.join(',',$msg).'||'.date('Y-m-d H:i:s',time()).PHP_EOL;
             }else{
-            $new_msg = strupper($log_name).': '.$msg.'--'.date('Y-m-d H:i:s',time()).PHP_EOL;
+            $new_msg = strtoupper($type).': '.$msg.'||'.date('Y-m-d H:i:s',time()).PHP_EOL;
         }
-        self::$logs[ $log_name ][] = $new_msg;
+        self::$logs[$log_name][] = $new_msg;
     }
     
    /**
@@ -90,7 +90,7 @@ class log
    /**
     * 获得日志文件存放目录
     */
-    private function get_log_path( $path_name )
+    private function get_log_path($path_name)
     {
         $base_path = self::$base_path;
         
@@ -110,10 +110,10 @@ class log
         {
           if(self::$log_con == "single"){
           
-              self::$log_paths[$path] = $base_path.'/'.$log_name.'.log';
+              self::$log_paths[$path_name] = $base_path.'/'.$path_name.'.log';
           }elseif(self::$log_con == "logrorate"){
           
-              self::$log_paths[$path] = $base_path.'/'.$log_name.'-'.'date('Y-m-d',time())'.'.log';
+              self::$log_paths[$path_name] = $base_path.'/'.$path_name.'-'.date('Y-m-d',time()).'.log';
           }
             //self::$log_paths[$path_name] = $base_path.'/'.$path_name.'.log';
             return self::$log_paths[$path_name];
@@ -138,7 +138,7 @@ class log
               self::$log_paths[$path] = $base_path.'/'.$log_name.'.log';
           }elseif(self::$log_con == "logrorate"){
           
-              self::$log_paths[$path] = $base_path.'/'.$log_name.'-'.'date('Y-m-d',time())'.'.log';
+              self::$log_paths[$path] = $base_path.'/'.$log_name.'-'.date('Y-m-d',time()).'.log';
           }
             
             return self::$log_paths[$path];

@@ -46,15 +46,16 @@ if (! function_exists('env')) {
     }
 }
 
-
-if(! function_exists('env'))
+function RainbowError($errno, $errstr, $errfile, $errline)
 {
-
-
-
-
-
-
-
+    echo "<b>Custom error:</b> [$errno] $errstr<br />";
+    echo " Error on line $errline in $errfile<br />";
+    echo "Ending Script";
 }
 
+function RainbowException($exception) {
+    echo "Uncaught exception: " , $exception->getMessage(), "\n";
+}
+function RainbowShutdown() {
+    echo "shutdown\n";
+}

@@ -12,7 +12,6 @@
  */
 namespace RainbowPHP\Core;
 use App\Config\Config_middleware;
-use RainbowPHP\Helpers\RainbowHelpers;
 /**
  * @method static Router get(string $route, Callable $callback)
  * @method static Router post(string $route, Callable $callback)
@@ -71,20 +70,22 @@ class Router {
         self::$routes = str_replace('//', '/', self::$routes);
 
         // Check if route is defined without regex
-        var_dump($uri);
-        var_dump(self::$routes);
         if (in_array($uri, self::$routes)) {
             $route_pos = array_keys(self::$routes, $uri);
             foreach ($route_pos as $route) {
                 // Using an ANY option to match both GET and POST requests
                 if (self::$methods[$route] == $method || self::$methods[$route] == 'ANY') {
                         $found_route = true;
-                        echo '完全匹配路由佩佩完成<br/>';
-                    //RainbowHelpers::beforeControllerMiddleware($segments[0]);
+                        echo '<br/>完全匹配路由佩佩完成<br/>';
+                    var_dump(self::$callbacks[$route]);
+                    if (self::$halts) return;
 
-                    RainbowHelpers::runRoute(self::$callbacks[$route],[],true);
+                    self::beforeControllerMiddleware(self::$callbacks[$route]);
 
-                        if (self::$halts) return;
+                    self::runRoute(self::$callbacks[$route]);
+
+                    self::afterControllerMiddleware(self::$callbacks[$route]);
+
 
                 }
             }
@@ -102,8 +103,11 @@ class Router {
 
                         // Remove $matched[0] as [1] is the first parameter.
                         array_shift($matched);
+                        self::beforeControllerMiddleware(self::$callbacks[$route]);
 
-                        RainbowHelpers::runRoute(self::$callbacks[$route],$matched,true);
+                        self::runRoute(self::$callbacks[$route],$matched);
+
+                        self::afterControllerMiddleware(self::$callbacks[$route]);
 
                         if (self::$halts) return;
 
@@ -130,5 +134,85 @@ class Router {
             }
             call_user_func(self::$error_callback);
         }
+    }
+    public static function descRoute($route)
+    {
+        if (!is_object($route)) {
+
+            // Grab all parts based on a / separator
+            $parts = explode('/',$route);
+
+            // Collect the last index of the array
+            $last = end($parts);
+
+            // Grab the controller name and method call
+            $segments = explode('@',$last);
+
+            return $segments;
+
+        }
+
+    }
+    public static function runRoute($route,$paramter=[])
+    {
+
+        if (!is_object($route)) {
+
+            $segments = self::descRoute($route);
+
+            // Instanitate controller
+            $controller = new $segments[0]();
+
+            // Call method
+            if(!method_exists($controller, $segments[1])) {
+
+                echo "类 and 方法 不匹配";
+            }elseif(!$paramter){
+
+                $controller->{$segments[1]}();
+
+            }else{
+
+                call_user_func_array(array($controller, $segments[1]), $paramter);
+
+            }
+        } else {
+            // Call closure
+            if(!$paramter){
+
+                call_user_func($route);
+            }else{
+
+                call_user_func_array($route, $paramter);
+            }
+
+        }
+
+    }
+    public static function beforeControllerMiddleware($route)
+    {
+        $segments = self::descRoute($route);
+
+        $middlewares = Config_middleware::$beforeController[$segments[0]];
+
+        foreach($middlewares as $val){
+
+            self::runRoute($val);
+        }
+
+    }
+
+    public static function afterControllerMiddleware($route)
+    {
+        $segments = self::descRoute($route);
+
+        $middlewares = Config_middleware::$afterController[$segments['0']];
+        //$middlewares = Config_middleware::$afterController[$controller];
+
+        foreach($middlewares as $val){
+
+            self::runRoute($val);
+        }
+
     }
 }

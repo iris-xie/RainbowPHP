@@ -17,7 +17,12 @@ $app->beforeSysMiddleWare();
 
 //需要进行处理参数
 // 路由配置
-require $app->basePath().'/app/Config/routes.php';
+require __DIR__ .'/../app/Config/routes.php';
+
+
+$app->afterSysMiddleWare();
+
+$app->terminate();
 
 /*
 |--------------------------------------------------------------------------

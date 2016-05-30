@@ -268,20 +268,7 @@ if ( ! function_exists('show_error'))
 		exit($exit_status);
 	}
 }
-function RainbowError($errno, $errstr, $errfile, $errline)
-{
-	echo "<b>Custom error:</b> [$errno] $errstr<br />";
-	echo " Error on line $errline in $errfile<br />";
-	echo "Ending Script";
-	die();
-}
 
-function RainbowException($exception) {
-	echo "Uncaught exception: " , $exception->getMessage(), "\n";
-}
-function RainbowShutdown() {
-	echo "shutdown\n";
-}
 
 // ------------------------------------------------------------------------
 

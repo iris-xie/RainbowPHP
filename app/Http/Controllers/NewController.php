@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 use RainbowPHP\Core\RainbowController;
 use App\Http\Models\PeopleModel;
+use RainbowPHP\Core\Log;
 class NewController extends RainbowController{
 
     public function __construct()
@@ -17,12 +18,15 @@ class NewController extends RainbowController{
 
     public function index(){
 
-        echo 's21312s';
+        echo '<br/>s21312s<br/>';
 
         //echo time().microtime();
 
         $INF0= PeopleModel::getOne(1);
-        echo '获取数据';
+        echo '<br/>获取数据<br/>';
+        $log = Log::getInstance();
+
+        $log ->add('-----'.time());
         //echo time().microtime();
 
         echo $this->view->render('test.html.twig', array('the' => 'variables', 'go' => 'here'));

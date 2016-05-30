@@ -16,7 +16,7 @@ class Oauth{
 
     function checkOauth()
     {
-        echo '系统前中间件加载完成<br/>';
+        echo '授权中间件加载完成<br/>';
         return true;
     }
 }

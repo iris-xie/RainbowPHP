@@ -9,7 +9,7 @@ namespace RainbowPHP\Core;
 use App\Config\Config_middleware;
 use App\Config\Config_sys;
 use RainbowPHP\Helpers\RainbowHelpers;
-
+use RainbowPHP\Core\Log;
 class Application
 {
     /**
@@ -27,13 +27,6 @@ class Application
     protected $basePath;
 
     /**
-     * Indicates if the application has been bootstrapped before.
-     *
-     * @var bool
-     */
-    protected $hasBeenBootstrapped = false;
-
-    /**
      * Indicates if the application has "booted".
      *
      * @var bool
@@ -45,49 +38,28 @@ class Application
      *
      * @var array
      */
-    protected $bootingCallbacks = [];
+    protected $beforeBootedMiddlewares = [];
 
     /**
      * The array of booted callbacks.
      *
      * @var array
      */
-    protected $bootedCallbacks = [];
+    protected $afterBootedMiddlewares  = [];
 
     /**
      * The array of terminating callbacks.
      *
      * @var array
      */
-    protected $terminatingCallbacks = [];
+    protected $terminatingMiddlewares = [];
 
     /**
-     * All of the registered service providers.
-     *
-     * @var array
-     */
-    protected $serviceProviders = [];
-
-    /**
-     * The names of the loaded service providers.
-     *
-     * @var array
-     */
-    protected $loadedProviders = [];
-
-    /**
-     * The deferred services and their providers.
-     *
-     * @var array
-     */
-    protected $deferredServices = [];
-
-    /**
-     * A custom callback used to configure Monolog.
+     * A custom callback used to configure Log.
      *
      * @var callable|null
      */
-    protected $monologConfigurator;
+    protected $LogConfig;
 
     /**
      * The custom database path defined by the developer.
@@ -141,10 +113,9 @@ class Application
         if ($basePath) {
             $this->setBasePath($basePath);
         }
-        //echo time().microtime();
-        $this->booted = true;
-
-        $this->setEnv();
+        
+        $this -> run();
+        
     }
 
     public function setEnv(){
@@ -399,181 +370,7 @@ class Application
     {
         return $this['env'] == 'testing';
     }
-
-    /**
-     * Register all of the configured providers.
-     *
-     * @return void
-     */
-    public function registerConfiguredProviders()
-    {
-        $manifestPath = $this->getCachedServicesPath();
-
-        (new ProviderRepository($this, new Filesystem, $manifestPath))
-            ->load($this->config['app.providers']);
-    }
-
-    /**
-     * Register a service provider with the application.
-     *
-     * @param  \Illuminate\Support\ServiceProvider|string  $provider
-     * @param  array  $options
-     * @param  bool   $force
-     * @return \Illuminate\Support\ServiceProvider
-     */
-    public function register($provider, $options = [], $force = false)
-    {
-        if (($registered = $this->getProvider($provider)) && ! $force) {
-            return $registered;
-        }
-
-        // If the given "provider" is a string, we will resolve it, passing in the
-        // application instance automatically for the developer. This is simply
-        // a more convenient way of specifying your service provider classes.
-        if (is_string($provider)) {
-            $provider = $this->resolveProviderClass($provider);
-        }
-
-        $provider->register();
-
-        // Once we have registered the service we will iterate through the options
-        // and set each of them on the application so they will be available on
-        // the actual loading of the service objects and for developer usage.
-        foreach ($options as $key => $value) {
-            $this[$key] = $value;
-        }
-
-        $this->markAsRegistered($provider);
-
-        // If the application has already booted, we will call this boot method on
-        // the provider class so it has an opportunity to do its boot logic and
-        // will be ready for any usage by the developer's application logics.
-        if ($this->booted) {
-            $this->bootProvider($provider);
-        }
-
-        return $provider;
-    }
-
-    /**
-     * Get the registered service provider instance if it exists.
-     *
-     * @param  \Illuminate\Support\ServiceProvider|string  $provider
-     * @return \Illuminate\Support\ServiceProvider|null
-     */
-    public function getProvider($provider)
-    {
-        $name = is_string($provider) ? $provider : get_class($provider);
-
-        return Arr::first($this->serviceProviders, function ($key, $value) use ($name) {
-            return $value instanceof $name;
-        });
-    }
-
-    /**
-     * Resolve a service provider instance from the class name.
-     *
-     * @param  string  $provider
-     * @return \Illuminate\Support\ServiceProvider
-     */
-    public function resolveProviderClass($provider)
-    {
-        return new $provider($this);
-    }
-
-    /**
-     * Mark the given provider as registered.
-     *
-     * @param  \Illuminate\Support\ServiceProvider  $provider
-     * @return void
-     */
-    protected function markAsRegistered($provider)
-    {
-        $this['events']->fire($class = get_class($provider), [$provider]);
-
-        $this->serviceProviders[] = $provider;
-
-        $this->loadedProviders[$class] = true;
-    }
-
-    /**
-     * Load and boot all of the remaining deferred providers.
-     *
-     * @return void
-     */
-    public function loadDeferredProviders()
-    {
-        // We will simply spin through each of the deferred providers and register each
-        // one and boot them if the application has booted. This should make each of
-        // the remaining services available to this application for immediate use.
-        foreach ($this->deferredServices as $service => $provider) {
-            $this->loadDeferredProvider($service);
-        }
-
-        $this->deferredServices = [];
-    }
-
-    /**
-     * Load the provider for a deferred service.
-     *
-     * @param  string  $service
-     * @return void
-     */
-    public function loadDeferredProvider($service)
-    {
-        if (! isset($this->deferredServices[$service])) {
-            return;
-        }
-
-        $provider = $this->deferredServices[$service];
-
-        // If the service provider has not already been loaded and registered we can
-        // register it with the application and remove the service from this list
-        // of deferred services, since it will already be loaded on subsequent.
-        if (! isset($this->loadedProviders[$provider])) {
-            $this->registerDeferredProvider($provider, $service);
-        }
-    }
-
-    /**
-     * Register a deferred provider and service.
-     *
-     * @param  string  $provider
-     * @param  string  $service
-     * @return void
-     */
-    public function registerDeferredProvider($provider, $service = null)
-    {
-        // Once the provider that provides the deferred service has been registered we
-        // will remove it from our local list of the deferred services with related
-        // providers so that this container does not try to resolve it out again.
-        if ($service) {
-            unset($this->deferredServices[$service]);
-        }
-
-        $this->register($instance = new $provider($this));
-
-        if (! $this->booted) {
-            $this->booting(function () use ($instance) {
-                $this->bootProvider($instance);
-            });
-        }
-    }
-
-    /**
-     * Resolve the given type from the container.
-     *
-     * (Overriding Container::make)
-     *
-     * @param  string  $abstract
-     * @param  array   $parameters
-     * @return mixed
-     */
-    public function make()
-    {
-        return true;
-    }
-
+    
     /**
      * Determine if the given abstract type has been bound.
      *
@@ -607,19 +404,15 @@ class Application
         if ($this->booted) {
             return;
         }
-
-        // Once the application has booted we will also fire some "booted" callbacks
-        // for any listeners that need to do work after this initial booting gets
-        // finished. This is useful when ordering the boot-up processes we run.
-        $this->fireAppCallbacks($this->bootingCallbacks);
-
-        array_walk($this->serviceProviders, function ($p) {
-            $this->bootProvider($p);
-        });
-
+        //echo time().microtime();
         $this->booted = true;
 
-        $this->fireAppCallbacks($this->bootedCallbacks);
+        $this->setEnv();
+        
+        //$this->LogConfig = Config_sys::log;
+        
+        $log = Log::getInstance();
+       
     }
 
     /**
@@ -635,83 +428,6 @@ class Application
         }
     }
 
-    /**
-     * Register a new boot listener.
-     *
-     * @param  mixed  $callback
-     * @return void
-     */
-    public function booting($callback)
-    {
-        $this->bootingCallbacks[] = $callback;
-    }
-
-    /**
-     * Register a new "booted" listener.
-     *
-     * @param  mixed  $callback
-     * @return void
-     */
-    public function booted($callback)
-    {
-        $this->bootedCallbacks[] = $callback;
-
-        if ($this->isBooted()) {
-            $this->fireAppCallbacks([$callback]);
-        }
-    }
-
-    /**
-     * Call the booting callbacks for the application.
-     *
-     * @param  array  $callbacks
-     * @return void
-     */
-    protected function fireAppCallbacks(array $callbacks)
-    {
-        foreach ($callbacks as $callback) {
-            call_user_func($callback, $this);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function handle(SymfonyRequest $request, $type = self::MASTER_REQUEST, $catch = true)
-    {
-        return $this['Illuminate\Contracts\Http\Kernel']->handle(Request::createFromBase($request));
-    }
-
-    /**
-     * Determine if middleware has been disabled for the application.
-     *
-     * @return bool
-     */
-    public function shouldSkipMiddleware()
-    {
-        return $this->bound('middleware.disable') &&
-        $this->make('middleware.disable') === true;
-    }
-
-    /**
-     * Determine if the application configuration is cached.
-     *
-     * @return bool
-     */
-    public function configurationIsCached()
-    {
-        return file_exists($this->getCachedConfigPath());
-    }
-
-    /**
-     * Get the path to the configuration cache file.
-     *
-     * @return string
-     */
-    public function getCachedConfigPath()
-    {
-        return $this->bootstrapPath().'/cache/config.php';
-    }
 
     /**
      * Determine if the application routes are cached.
@@ -720,66 +436,7 @@ class Application
      */
     public function routesAreCached()
     {
-        return $this['files']->exists($this->getCachedRoutesPath());
-    }
-
-    /**
-     * Get the path to the routes cache file.
-     *
-     * @return string
-     */
-    public function getCachedRoutesPath()
-    {
-        return $this->bootstrapPath().'/cache/routes.php';
-    }
-
-    /**
-     * Get the path to the cached "compiled.php" file.
-     *
-     * @return string
-     */
-    public function getCachedCompilePath()
-    {
-        return $this->bootstrapPath().'/cache/compiled.php';
-    }
-
-    /**
-     * Get the path to the cached services.php file.
-     *
-     * @return string
-     */
-    public function getCachedServicesPath()
-    {
-        return $this->bootstrapPath().'/cache/services.php';
-    }
-
-    /**
-     * Determine if the application is currently down for maintenance.
-     *
-     * @return bool
-     */
-    public function isDownForMaintenance()
-    {
-        return file_exists($this->storagePath().'/framework/down');
-    }
-
-    /**
-     * Throw an HttpException with the given data.
-     *
-     * @param  int     $code
-     * @param  string  $message
-     * @param  array   $headers
-     * @return void
-     *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
-     */
-    public function abort($code, $message = '', array $headers = [])
-    {
-        if ($code == 404) {
-            throw new NotFoundHttpException($message);
-        }
-
-        throw new HttpException($code, $message, null, $headers);
+        return false;
     }
 
     /**
@@ -788,10 +445,8 @@ class Application
      * @param  \Closure  $callback
      * @return $this
      */
-    public function terminating(Closure $callback)
+    public function terminating()
     {
-        $this->terminatingCallbacks[] = $callback;
-
         return $this;
     }
 
@@ -802,63 +457,7 @@ class Application
      */
     public function terminate()
     {
-        foreach ($this->terminatingCallbacks as $terminating) {
-            $this->call($terminating);
-        }
-    }
-
-    /**
-     * Get the service providers that have been loaded.
-     *
-     * @return array
-     */
-    public function getLoadedProviders()
-    {
-        return $this->loadedProviders;
-    }
-
-    /**
-     * Get the application's deferred services.
-     *
-     * @return array
-     */
-    public function getDeferredServices()
-    {
-        return $this->deferredServices;
-    }
-
-
-    /**
-     * Set the application's deferred services.
-     *
-     * @param  array  $services
-     * @return void
-     */
-    public function setDeferredServices(array $services)
-    {
-        $this->deferredServices = $services;
-    }
-
-    /**
-     * Add an array of services to the application's deferred services.
-     *
-     * @param  array  $services
-     * @return void
-     */
-    public function addDeferredServices(array $services)
-    {
-        $this->deferredServices = array_merge($this->deferredServices, $services);
-    }
-
-    /**
-     * Determine if the given service is a deferred service.
-     *
-     * @param  string  $service
-     * @return bool
-     */
-    public function isDeferredService($service)
-    {
-        return isset($this->deferredServices[$service]);
+     
     }
 
     /**
@@ -867,9 +466,9 @@ class Application
      * @param  callable  $callback
      * @return $this
      */
-    public function configureMonologUsing(callable $callback)
+    public function configureLogUsing(callable $callback)
     {
-        $this->monologConfigurator = $callback;
+        $this->LogConfigurator = $callback;
 
         return $this;
     }
@@ -879,9 +478,9 @@ class Application
      *
      * @return bool
      */
-    public function hasMonologConfigurator()
+    public function hasLogConfigurator()
     {
-        return ! is_null($this->monologConfigurator);
+        return ! is_null($this->LogConfigurator);
     }
 
     /**
@@ -889,45 +488,9 @@ class Application
      *
      * @return callable
      */
-    public function getMonologConfigurator()
+    public function getLogConfigurator()
     {
-        return $this->monologConfigurator;
-    }
-
-    /**
-     * Get the current application locale.
-     *
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this['config']->get('app.locale');
-    }
-
-    /**
-     * Set the current application locale.
-     *
-     * @param  string  $locale
-     * @return void
-     */
-    public function setLocale($locale)
-    {
-        $this['config']->set('app.locale', $locale);
-
-        $this['translator']->setLocale($locale);
-
-        $this['events']->fire('locale.changed', [$locale]);
-    }
-
-    /**
-     * Determine if application locale is the given locale.
-     *
-     * @param  string  $locale
-     * @return bool
-     */
-    public function isLocale($locale)
-    {
-        return $this->getLocale() == $locale;
+        return $this->LogConfigurator;
     }
 
     /**
@@ -979,18 +542,6 @@ class Application
                 $this->alias($key, $alias);
             }
         }
-    }
-
-    /**
-     * Flush the container of all bindings and resolved instances.
-     *
-     * @return void
-     */
-    public function flush()
-    {
-        parent::flush();
-
-        $this->loadedProviders = [];
     }
 
     /**

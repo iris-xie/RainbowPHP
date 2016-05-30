@@ -101,6 +101,14 @@ class Application
      * @var string
      */
     protected $middleware = null;
+    
+    /**
+     * The application namespace.
+     *
+     * @var string
+     */
+    protected $env = null;
+    protected $safety = null;
 
     /**
      * Create a new Illuminate application instance.
@@ -117,37 +125,79 @@ class Application
         $this -> run();
         
     }
+    /**
+     * Boot the application's service providers.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        if ($this->booted) {
+            return;
+        }
+        //echo time().microtime();
+        $this->booted = true;
 
-    public function setEnv(){
-
-        switch (Config_sys::$env) {
+        $this->setEnv();
+        
+        $this->setSafetyMod();
+        
+        $this->setCharset();
+        
+        $this->setHandler();
+        
+        //$this->LogConfig = Config_sys::log;
+        //初始化log类
+        Log::getInstance();
+       
+    }
+    protected function setEnv(){
+        
+        $this -> env = Config_sys::$env;
+        
+        switch ( $this -> env ) {
             case 'dev' :
                 error_reporting(7);
                 break;
 
             case 'testing' :
+                break;
             case 'production' :
                 error_reporting(0);
                 break;
 
             default :
-                exit('The application environment is not set correctly.');
+                throw WrongConfigException('The application environment is not set correctly.');
         }
-        //echo time().microtime();
-        if(Config_sys::$safety=='on'){
+    } 
+    protected function setEnv(){
+    
+        return $this -> env;
+    }
+    
+    protected function setSafetyMod()
+    {
+                //echo time().microtime();
+        $this -> safety = Config_sys::$safety;
+
+        if($this -> safety){
             ini_set('magic_quotes_runtime', 1);
         }else{
             ini_set('magic_quotes_runtime', 0);
         }
+    }
+    protected function setCharset()
+    {
+                //echo time().microtime();
+        $this -> charset = Config_sys::$charset;
 
-        $charset = Config_sys::$charset;
-        ini_set('default_charset', $charset);
+        ini_set('default_charset',  $this -> charset);
         if (extension_loaded('mbstring'))
         {
             if(!defined('MB_ENABLED'))define('MB_ENABLED', TRUE);
             // mbstring.internal_encoding is deprecated starting with PHP 5.6
             // and it's usage triggers E_DEPRECATED messages.
-            @ini_set('mbstring.internal_encoding', $charset);
+            @ini_set('mbstring.internal_encoding', $this -> charset);
             // This is required for mb_convert_encoding() to strip invalid characters.
             // That's utilized by CI_Utf8, but it's also done for consistency with iconv.
             mb_substitute_character('none');
@@ -164,7 +214,7 @@ class Application
             if(!defined('ICONV_ENABLED'))define('ICONV_ENABLED', TRUE);
             // iconv.internal_encoding is deprecated starting with PHP 5.6
             // and it's usage triggers E_DEPRECATED messages.
-            @ini_set('iconv.internal_encoding', $charset);
+            @ini_set('iconv.internal_encoding',  $this -> charset);
         }
         else
         {
@@ -173,17 +223,19 @@ class Application
 
         if (is_php('5.6'))
         {
-            ini_set('php.internal_encoding', $charset);
+            ini_set('php.internal_encoding',  $this -> charset);
         }
 
+    }
+    
+    
+    public function setHandler(){
 
         set_error_handler('RainbowError');
 
         set_exception_handler('RainbowException');
 
         register_shutdown_function('RainbowShutdown');
-
-        echo '系统实例化加载完成<br/>';
     }
 
     public function beforeSysMiddleWare(){
@@ -392,27 +444,6 @@ class Application
     public function isBooted()
     {
         return $this->booted;
-    }
-
-    /**
-     * Boot the application's service providers.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        if ($this->booted) {
-            return;
-        }
-        //echo time().microtime();
-        $this->booted = true;
-
-        $this->setEnv();
-        
-        //$this->LogConfig = Config_sys::log;
-        
-        $log = Log::getInstance();
-       
     }
 
     /**

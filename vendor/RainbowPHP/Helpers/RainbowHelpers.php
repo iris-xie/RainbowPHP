@@ -35,11 +35,17 @@ class RainbowHelpers
                 if($isController) self::beforeControllerMiddleware($segments[0]);
 
                 $controller->{$segments[1]}();
+                
+                if($isController) self::afterControllerMiddleware($segments[0]);
+
             }else{
 
                 if($isController) self::beforeControllerMiddleware($segments[0]);
 
                 call_user_func_array(array($controller, $segments[1]), $paramter);
+                
+                if($isController) self::afterControllerMiddleware($segments[0]);
+
             }
         } else {
             // Call closure

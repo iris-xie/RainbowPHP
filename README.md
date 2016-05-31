@@ -3,7 +3,7 @@ RainbowPHP 是专门针对PHP7 LNMP环境下开发restful接口而创作的。�
 
 #RainbowPHP的构成
 作者研究过CI Laravel symfony等知名框架，结合各个框架的优点，整合多个优秀组件而成。
-0.1版本的初步规划整个框架分为路由/MVC/Database/模板/日志/Cors这几部分。其中Database使用了Laravel的EloquentORM,这是目前作者觉得使用最趁手的ORM,目前版本只做了 Eloquent ORM的简单集成；下个版本会对EloquentORM进行大幅优化以提升其性能，并引入PDO,适应中小型项目的需要。模板部分使用了symfony的twig模板，下个会增加对原生PHP模板的支持。响应类采用了symfony的HTTPJI基础类库，未来会对这一类库大幅优化，提高性能。路由/日志/Cors部分由作者自己编写,路由部分实现了简单的restful路由并可以单独引起用,单独引用请标注来源及作者。
+0.1版本的初步规划整个框架分为路由/MVC/Database/模板/日志/Cors这几部分。其中Database使用了Laravel的EloquentORM,这是目前作者觉得使用最趁手的ORM,目前版本只做了 Eloquent ORM的简单集成；下个版本会对EloquentORM进行大幅优化以提升其性能，并引入PDO,适应中小型项目的需要。模板部分使用了symfony的twig模板；下个版本会增加对原生PHP模板的支持。响应类采用了symfony的HTTP基础类库，未来会对这一类库大幅优化，提高性能。路由/日志/Cors部分由作者自己编写,路由部分实现了简单的restful路由并可以单独引起用,单独引用请标注来源及作者。
 
 #RainbowPHP的用法
 

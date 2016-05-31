@@ -10,8 +10,8 @@ class Config_sys
 {
     public static $is_load   = [];
     public static $base_path = 'D:rainbow';
-    public static $charset  = 'utf8';
-    public static $database =   [
+    public static $charset  = 'utf-8';
+    public static $database = [
                             'driver' => 'mysql',
                             'host' => 'localhost',
                             'database' => 'rainbow',
@@ -20,7 +20,7 @@ class Config_sys
                             'charset' => 'utf8',
                             'collation' => 'utf8_general_ci',
                             'prefix' => ''
-                                ];
+                            ];
 
     public static $auto_load   = ['view', 'database', 'session', 'redis'];
     public static $env         = 'dev';
@@ -31,7 +31,8 @@ class Config_sys
                             'log_default' => 'RainbowPHP',
                             'log_con' => 'single',
                             'file_path' => '/storage/logs'
-                                ];
+
+    ];
 
 /*    public function __callStatic($name, $arguments)
     {

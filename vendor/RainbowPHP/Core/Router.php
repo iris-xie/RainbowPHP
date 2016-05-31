@@ -60,8 +60,6 @@ class Router {
      * Runs the callback for the given request
      */
     public static function dispatch(){
-        if (self::$halts) return;
-
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -77,10 +75,10 @@ class Router {
             foreach ($route_pos as $route) {
                 // Using an ANY option to match both GET and POST requests
                 if (self::$methods[$route] == $method || self::$methods[$route] == 'ANY') {
-
                         $found_route = true;
-
                         echo '<br/>完全匹配路由佩佩完成<br/>';
+                    var_dump(self::$callbacks[$route]);
+                    if (self::$halts) return;
 
                     self::beforeControllerMiddleware(self::$callbacks[$route]);
 
@@ -111,6 +109,7 @@ class Router {
 
                         self::afterControllerMiddleware(self::$callbacks[$route]);
 
+                        if (self::$halts) return;
 
                     }
                 }
@@ -162,19 +161,19 @@ class Router {
             $segments = self::descRoute($route);
 
             // Instanitate controller
-            $class = new $segments[0]();
+            $controller = new $segments[0]();
 
             // Call method
-            if(!method_exists($class, $segments[1])) {
+            if(!method_exists($controller, $segments[1])) {
 
                 echo "类 and 方法 不匹配";
             }elseif(!$paramter){
 
-                $class->{$segments[1]}();
+                $controller->{$segments[1]}();
 
             }else{
 
-                call_user_func_array(array($class, $segments[1]), $paramter);
+                call_user_func_array(array($controller, $segments[1]), $paramter);
 
             }
         } else {
@@ -208,6 +207,7 @@ class Router {
         $segments = self::descRoute($route);
 
         $middlewares = Config_middleware::$afterController[$segments['0']];
+        //$middlewares = Config_middleware::$afterController[$controller];
 
         foreach($middlewares as $val){
 

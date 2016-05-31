@@ -14,5 +14,4 @@ RainbowPHP 是专门针对PHP7 LNMP环境下开发restful接口而创作的。�
 框架自身开发速度很快，目前在世界范围内广发流行，但由于其系统庞大，导致其性能不高。作者本人在实际生产环境中使用Lumen开发一个大型项目，QPS始终未能达到50.故而有了自己创作一个高性能restful开发框架的想法，这个框架目前花费了我半个月的业余时间。有不足之处，希望大家不吝赐教，作者将长期维护这一项目。
 
 #联系方式
-PS如果有人对这一框架感兴趣，请联系作者 iris-xie  QQ 443833189 Gmail siqimochi0@gmail.com
-RainbowPHP的git地址
+PS如果有人对这一框架感兴趣，请联系作者 iris-xie  QQ 443833189 Gmail siqimochi0@gmail.com   RainbowPHP的git地址https://github.com/iris-xie/RainbowPHP.git

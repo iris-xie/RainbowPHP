@@ -93,136 +93,6 @@
         ]
     },
     {
-        "name": "twig/twig",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/twigphp/Twig.git",
-            "reference": "0ddc3c6395f3d5d2781657d957be319190bfaf5d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/twigphp/Twig/0ddc3c6395f3d5d2781657d957be319190bfaf5d.zip",
-            "reference": "0ddc3c6395f3d5d2781657d957be319190bfaf5d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5",
-            "symfony/polyfill-mbstring": "~1.0"
-        },
-        "require-dev": {
-            "symfony/debug": "~2.7",
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2016-04-24 13:56:57",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "http://twig.sensiolabs.org/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
-        ]
-    },
-    {
-        "name": "symfony/translation",
-        "version": "v2.8.6",
-        "version_normalized": "2.8.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/translation.git",
-            "reference": "d60b8e076d22953aabebeebda53bf334438e7aca"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/symfony/translation/d60b8e076d22953aabebeebda53bf334438e7aca.zip",
-            "reference": "d60b8e076d22953aabebeebda53bf334438e7aca",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9",
-            "symfony/polyfill-mbstring": "~1.0"
-        },
-        "conflict": {
-            "symfony/config": "<2.7"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/config": "~2.8",
-            "symfony/intl": "~2.4|~3.0.0",
-            "symfony/yaml": "~2.2|~3.0.0"
-        },
-        "suggest": {
-            "psr/log": "To use logging capability in translator",
-            "symfony/config": "",
-            "symfony/yaml": ""
-        },
-        "time": "2016-03-25 01:40:30",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Translation\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Translation Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "nesbot/carbon",
         "version": "1.21.0",
         "version_normalized": "1.21.0.0",
@@ -269,64 +139,6 @@
             "date",
             "datetime",
             "time"
-        ]
-    },
-    {
-        "name": "danielstjules/stringy",
-        "version": "1.10.0",
-        "version_normalized": "1.10.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/danielstjules/Stringy.git",
-            "reference": "4749c205db47ee5b32e8d1adf6d9aff8db6caf3b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/danielstjules/Stringy/4749c205db47ee5b32e8d1adf6d9aff8db6caf3b.zip",
-            "reference": "4749c205db47ee5b32e8d1adf6d9aff8db6caf3b",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2015-07-23 00:54:12",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Stringy\\": "src/"
-            },
-            "files": [
-                "src/Create.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Daniel St. Jules",
-                "email": "danielst.jules@gmail.com",
-                "homepage": "http://www.danielstjules.com"
-            }
-        ],
-        "description": "A string manipulation library with multibyte support",
-        "homepage": "https://github.com/danielstjules/Stringy",
-        "keywords": [
-            "UTF",
-            "helpers",
-            "manipulation",
-            "methods",
-            "multibyte",
-            "string",
-            "utf-8",
-            "utility",
-            "utils"
         ]
     },
     {
@@ -399,28 +211,94 @@
         ]
     },
     {
-        "name": "illuminate/contracts",
-        "version": "v5.0.33",
-        "version_normalized": "5.0.33.0",
+        "name": "symfony/translation",
+        "version": "v3.1.0",
+        "version_normalized": "3.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/illuminate/contracts.git",
-            "reference": "b8b11d78724a6f8a62be3b1dfa20fa372f861398"
+            "url": "https://github.com/symfony/translation.git",
+            "reference": "0e67031c9ef0ad681932d2b24f4fd0ec8a6679ff"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/contracts/b8b11d78724a6f8a62be3b1dfa20fa372f861398.zip",
-            "reference": "b8b11d78724a6f8a62be3b1dfa20fa372f861398",
+            "url": "https://packagist.phpcomposer.com/files/symfony/translation/0e67031c9ef0ad681932d2b24f4fd0ec8a6679ff.zip",
+            "reference": "0e67031c9ef0ad681932d2b24f4fd0ec8a6679ff",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.4.0"
+            "php": ">=5.5.9",
+            "symfony/polyfill-mbstring": "~1.0"
         },
-        "time": "2015-05-15 07:22:28",
+        "conflict": {
+            "symfony/config": "<2.8"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.8|~3.0",
+            "symfony/intl": "~2.8|~3.0",
+            "symfony/yaml": "~2.8|~3.0"
+        },
+        "suggest": {
+            "psr/log": "To use logging capability in translator",
+            "symfony/config": "",
+            "symfony/yaml": ""
+        },
+        "time": "2016-05-12 18:19:29",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.0-dev"
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Translation\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Translation Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "illuminate/contracts",
+        "version": "v5.2.32",
+        "version_normalized": "5.2.32.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/contracts.git",
+            "reference": "411b851962c211078ade7664a6976e77a78cd2a5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/illuminate/contracts/411b851962c211078ade7664a6976e77a78cd2a5.zip",
+            "reference": "411b851962c211078ade7664a6976e77a78cd2a5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2016-03-07 20:37:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -443,36 +321,89 @@
         "homepage": "http://laravel.com"
     },
     {
-        "name": "illuminate/support",
-        "version": "v5.0.33",
-        "version_normalized": "5.0.33.0",
+        "name": "paragonie/random_compat",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/illuminate/support.git",
-            "reference": "32a12f97029b624fc0f9454e7ca69eaafef49c5d"
+            "url": "https://github.com/paragonie/random_compat.git",
+            "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/support/32a12f97029b624fc0f9454e7ca69eaafef49c5d.zip",
-            "reference": "32a12f97029b624fc0f9454e7ca69eaafef49c5d",
+            "url": "https://packagist.phpcomposer.com/files/paragonie/random_compat/c7e26a21ba357863de030f0b9e701c7d04593774.zip",
+            "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
             "shasum": ""
         },
         "require": {
-            "danielstjules/stringy": "~1.8",
-            "doctrine/inflector": "~1.0",
-            "ext-mbstring": "*",
-            "illuminate/contracts": "5.0.*",
-            "php": ">=5.4.0"
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*|5.*"
         },
         "suggest": {
-            "jeremeamia/superclosure": "Required to be able to serialize closures (~2.0).",
-            "symfony/var-dumper": "Required to use the dd function (2.6.*)."
+            "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-        "time": "2015-06-04 12:15:51",
+        "time": "2016-03-18 20:34:03",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Paragon Initiative Enterprises",
+                "email": "security@paragonie.com",
+                "homepage": "https://paragonie.com"
+            }
+        ],
+        "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+        "keywords": [
+            "csprng",
+            "pseudorandom",
+            "random"
+        ]
+    },
+    {
+        "name": "illuminate/support",
+        "version": "v5.2.32",
+        "version_normalized": "5.2.32.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/support.git",
+            "reference": "61329ea409362fdae167fdca1125f46c997ce689"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/illuminate/support/61329ea409362fdae167fdca1125f46c997ce689.zip",
+            "reference": "61329ea409362fdae167fdca1125f46c997ce689",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/inflector": "~1.0",
+            "ext-mbstring": "*",
+            "illuminate/contracts": "5.2.*",
+            "paragonie/random_compat": "~1.4",
+            "php": ">=5.5.9"
+        },
+        "suggest": {
+            "illuminate/filesystem": "Required to use the composer class (5.2.*).",
+            "jeremeamia/superclosure": "Required to be able to serialize closures (~2.2).",
+            "symfony/polyfill-php56": "Required to use the hash_equals function on PHP 5.5 (~1.0).",
+            "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
+            "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
+        },
+        "time": "2016-05-14 16:24:10",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.0-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -499,28 +430,28 @@
     },
     {
         "name": "illuminate/container",
-        "version": "v5.0.33",
-        "version_normalized": "5.0.33.0",
+        "version": "v5.2.32",
+        "version_normalized": "5.2.32.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/container.git",
-            "reference": "aa85c752eb7c6ccc2c6ffc5bfffb3ba8dd9719d6"
+            "reference": "1e156f8017490f5583ab161030bf839c77c95e54"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/container/aa85c752eb7c6ccc2c6ffc5bfffb3ba8dd9719d6.zip",
-            "reference": "aa85c752eb7c6ccc2c6ffc5bfffb3ba8dd9719d6",
+            "url": "https://packagist.phpcomposer.com/files/illuminate/container/1e156f8017490f5583ab161030bf839c77c95e54.zip",
+            "reference": "1e156f8017490f5583ab161030bf839c77c95e54",
             "shasum": ""
         },
         "require": {
-            "illuminate/contracts": "5.0.*",
-            "php": ">=5.4.0"
+            "illuminate/contracts": "5.2.*",
+            "php": ">=5.5.9"
         },
-        "time": "2015-05-29 20:16:27",
+        "time": "2016-03-16 17:19:17",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.0-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -544,37 +475,39 @@
     },
     {
         "name": "illuminate/database",
-        "version": "v5.0.33",
-        "version_normalized": "5.0.33.0",
+        "version": "v5.2.32",
+        "version_normalized": "5.2.32.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/database.git",
-            "reference": "6d79bb678a91123a15418863af901d2145b50349"
+            "reference": "5fbd370c687b5f428357982883eadf9fa33cf9a1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/illuminate/database/6d79bb678a91123a15418863af901d2145b50349.zip",
-            "reference": "6d79bb678a91123a15418863af901d2145b50349",
+            "url": "https://packagist.phpcomposer.com/files/illuminate/database/5fbd370c687b5f428357982883eadf9fa33cf9a1.zip",
+            "reference": "5fbd370c687b5f428357982883eadf9fa33cf9a1",
             "shasum": ""
         },
         "require": {
-            "illuminate/container": "5.0.*",
-            "illuminate/contracts": "5.0.*",
-            "illuminate/support": "5.0.*",
-            "nesbot/carbon": "~1.0",
-            "php": ">=5.4.0"
+            "illuminate/container": "5.2.*",
+            "illuminate/contracts": "5.2.*",
+            "illuminate/support": "5.2.*",
+            "nesbot/carbon": "~1.20",
+            "php": ">=5.5.9"
         },
         "suggest": {
             "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
-            "illuminate/console": "Required to use the database commands (5.0.*).",
-            "illuminate/events": "Required to use the observers with Eloquent (5.0.*).",
-            "illuminate/filesystem": "Required to use the migrations (5.0.*)."
+            "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+            "illuminate/console": "Required to use the database commands (5.2.*).",
+            "illuminate/events": "Required to use the observers with Eloquent (5.2.*).",
+            "illuminate/filesystem": "Required to use the migrations (5.2.*).",
+            "illuminate/pagination": "Required to paginate the result set (5.2.*)."
         },
-        "time": "2015-06-02 13:39:10",
+        "time": "2016-05-15 17:43:26",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.0-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -600,6 +533,172 @@
             "laravel",
             "orm",
             "sql"
+        ]
+    },
+    {
+        "name": "joshcam/mysqli-database-class",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/joshcam/PHP-MySQLi-Database-Class.git",
+            "reference": "b14591264eb2830f5765d5cd5f7f4661c3b1dabd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/joshcam/PHP-MySQLi-Database-Class/b14591264eb2830f5765d5cd5f7f4661c3b1dabd.zip",
+            "reference": "b14591264eb2830f5765d5cd5f7f4661c3b1dabd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-05-21 07:17:54",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "MysqliDb.php",
+                "dbObject.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Josh Campbell",
+                "email": "josh.lee.campbell@gmail.com",
+                "homepage": "https://github.com/joshcam",
+                "role": "Developer"
+            },
+            {
+                "name": "Alexander V. Butenko",
+                "email": "a.butenka@gmail.com",
+                "homepage": "http://smarttechdo.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP MySQL Wrapper and object mapper which utilizes MySQLi and prepared statements"
+    },
+    {
+        "name": "symfony/http-foundation",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/http-foundation.git",
+            "reference": "7e7799e22166165b268cb9a5752f28e947277963"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/symfony/http-foundation/7e7799e22166165b268cb9a5752f28e947277963.zip",
+            "reference": "7e7799e22166165b268cb9a5752f28e947277963",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "symfony/polyfill-mbstring": "~1.1"
+        },
+        "require-dev": {
+            "symfony/expression-language": "~2.8|~3.0"
+        },
+        "time": "2016-05-13 18:13:23",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\HttpFoundation\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony HttpFoundation Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "twig/twig",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "cf96ecf366eb24cfe680b62f9134b5ddc9b86818"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/twigphp/Twig/cf96ecf366eb24cfe680b62f9134b5ddc9b86818.zip",
+            "reference": "cf96ecf366eb24cfe680b62f9134b5ddc9b86818",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "require-dev": {
+            "symfony/debug": "~2.7",
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2016-05-30 09:07:11",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "http://twig.sensiolabs.org/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
         ]
     }
 ]

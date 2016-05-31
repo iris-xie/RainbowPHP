@@ -2,11 +2,263 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df79f0c-e400-4de2-8714-5fe0bef01699" name="Default" comment="Default">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Config/Config_sys.php" afterPath="$PROJECT_DIR$/app/Config/Config_sys.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NewController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/phpunit.xml.dist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/src/Create.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/src/StaticStringy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/src/Stringy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/tests/CommonTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/tests/CreateTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/tests/StaticStringyTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/danielstjules/stringy/tests/StringyTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/illuminate/container/BindingResolutionException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/HandlerResolver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/ShouldBeQueued.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/Middleware.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/TerminableMiddleware.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/SeedCommand.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Catalogue/DiffOperation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Catalogue/DiffOperationTest.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/RainbowPHP.log" afterPath="$PROJECT_DIR$/storage/logs/RainbowPHP.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/RainbowPHP/Core/Router.php" afterPath="$PROJECT_DIR$/vendor/RainbowPHP/Core/Router.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/container/Container.php" afterPath="$PROJECT_DIR$/vendor/illuminate/container/Container.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/container/ContextualBindingBuilder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/container/ContextualBindingBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/container/composer.json" afterPath="$PROJECT_DIR$/vendor/illuminate/container/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/Authenticatable.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/Authenticatable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/CanResetPassword.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/CanResetPassword.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/Guard.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/Guard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/PasswordBroker.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/PasswordBroker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/Registrar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/Registrar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/UserProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Auth/UserProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/Dispatcher.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/Dispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/QueueingDispatcher.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/QueueingDispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/SelfHandling.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Bus/SelfHandling.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Cache/Factory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Cache/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Cache/Repository.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Cache/Repository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Cache/Store.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Cache/Store.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Config/Repository.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Config/Repository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Console/Application.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Console/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Console/Kernel.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Console/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Container/Container.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Container/Container.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Container/ContextualBindingBuilder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Container/ContextualBindingBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Cookie/Factory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Cookie/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Cookie/QueueingFactory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Cookie/QueueingFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Database/ModelIdentifier.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Database/ModelIdentifier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Debug/ExceptionHandler.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Debug/ExceptionHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Encryption/DecryptException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Encryption/DecryptException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Encryption/Encrypter.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Encryption/Encrypter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Events/Dispatcher.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Events/Dispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/Cloud.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/Cloud.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/Factory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/FileNotFoundException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/FileNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/Filesystem.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Filesystem/Filesystem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Foundation/Application.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Foundation/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Hashing/Hasher.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Hashing/Hasher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Http/Kernel.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Logging/Log.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Logging/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Mail/MailQueue.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Mail/MailQueue.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Mail/Mailer.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Mail/Mailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Pagination/LengthAwarePaginator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Pagination/LengthAwarePaginator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Pagination/Paginator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Pagination/Paginator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Pagination/Presenter.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Pagination/Presenter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Pipeline/Hub.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Pipeline/Hub.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Pipeline/Pipeline.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Pipeline/Pipeline.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/EntityNotFoundException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/EntityNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/EntityResolver.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/EntityResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Factory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Job.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Job.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Monitor.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Monitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Queue.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/Queue.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/QueueableEntity.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Queue/QueueableEntity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Redis/Database.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Redis/Database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/Registrar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/Registrar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/ResponseFactory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/ResponseFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/UrlGenerator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/UrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/UrlRoutable.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Routing/UrlRoutable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/Arrayable.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/Arrayable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/Jsonable.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/Jsonable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/MessageBag.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/MessageBag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/MessageProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/MessageProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/Renderable.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Support/Renderable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/Factory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/UnauthorizedException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/UnauthorizedException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/ValidatesWhenResolved.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/ValidatesWhenResolved.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/ValidationException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/ValidationException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/Validator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/Validation/Validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/View/Factory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/View/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/View/View.php" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/View/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/contracts/composer.json" afterPath="$PROJECT_DIR$/vendor/illuminate/contracts/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Capsule/Manager.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Capsule/Manager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/ConnectionInterface.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/ConnectionInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/ConnectionResolver.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/ConnectionResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/ConnectionResolverInterface.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/ConnectionResolverInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/ConnectionFactory.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/ConnectionFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/Connector.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/Connector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/ConnectorInterface.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/ConnectorInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/MySqlConnector.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/MySqlConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/PostgresConnector.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/PostgresConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/SQLiteConnector.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/SQLiteConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/SqlServerConnector.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Connectors/SqlServerConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/BaseCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/BaseCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/InstallCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/InstallCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/MigrateCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/MigrateCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/MigrateMakeCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/MigrateMakeCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/RefreshCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/RefreshCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/ResetCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/ResetCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/RollbackCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/RollbackCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/StatusCommand.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Console/Migrations/StatusCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/DatabaseManager.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/DatabaseManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/DatabaseServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/DatabaseServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Builder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Collection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/MassAssignmentException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/MassAssignmentException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Model.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/ModelNotFoundException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/ModelNotFoundException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/QueueEntityResolver.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/QueueEntityResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/BelongsTo.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/BelongsTo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/BelongsToMany.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/BelongsToMany.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasMany.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasMany.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasManyThrough.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasManyThrough.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasOne.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasOne.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasOneOrMany.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/HasOneOrMany.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphMany.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphMany.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphOne.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphOne.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphOneOrMany.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphOneOrMany.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphPivot.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphPivot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphTo.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphTo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphToMany.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/MorphToMany.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/Pivot.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/Pivot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/Relation.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/Relations/Relation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/ScopeInterface.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/ScopeInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/SoftDeletes.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/SoftDeletes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/SoftDeletingScope.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Eloquent/SoftDeletingScope.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Grammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Grammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/MigrationServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/MigrationServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/DatabaseMigrationRepository.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/DatabaseMigrationRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/Migration.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/Migration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/MigrationCreator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/MigrationCreator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/MigrationRepositoryInterface.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/MigrationRepositoryInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/Migrator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/Migrator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/stubs/blank.stub" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/stubs/blank.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/stubs/create.stub" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/stubs/create.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/stubs/update.stub" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Migrations/stubs/update.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/MySqlConnection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/MySqlConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/PostgresConnection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/PostgresConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Builder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Expression.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Expression.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/Grammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/Grammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/MySqlGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/MySqlGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/PostgresGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/PostgresGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/SQLiteGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/SQLiteGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/SqlServerGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Grammars/SqlServerGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/JoinClause.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/JoinClause.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/MySqlProcessor.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/MySqlProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/PostgresProcessor.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/PostgresProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/Processor.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/Processor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/SQLiteProcessor.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/SQLiteProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/SqlServerProcessor.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Query/Processors/SqlServerProcessor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/QueryException.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/QueryException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/README.md" afterPath="$PROJECT_DIR$/vendor/illuminate/database/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/SQLiteConnection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/SQLiteConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Blueprint.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Blueprint.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Builder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/Grammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/Grammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/MySqlGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/MySqlGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/PostgresGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/PostgresGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/SQLiteGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/SQLiteGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/SqlServerGrammar.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/Grammars/SqlServerGrammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Schema/MySqlBuilder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Schema/MySqlBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/SeedServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/SeedServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/Seeder.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/Seeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/SqlServerConnection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/database/SqlServerConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/database/composer.json" afterPath="$PROJECT_DIR$/vendor/illuminate/database/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/AggregateServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/AggregateServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Arr.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Arr.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/ClassLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Collection.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Debug/Dumper.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Debug/Dumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Debug/HtmlDumper.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Debug/HtmlDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/App.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/App.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Artisan.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Artisan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Auth.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Blade.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Bus.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Bus.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Cache.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Config.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Cookie.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Cookie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Crypt.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Crypt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/DB.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/DB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Event.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Facade.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Facade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/File.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Hash.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Hash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Input.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Input.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Lang.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Lang.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Log.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Mail.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Password.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Queue.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Queue.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Redirect.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Redirect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Redis.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Redis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Request.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Response.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Response.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Route.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Schema.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Session.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Storage.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Storage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/URL.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/URL.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Validator.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/Validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Facades/View.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Facades/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Fluent.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Fluent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Manager.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Manager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/MessageBag.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/MessageBag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/NamespacedItemResolver.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/NamespacedItemResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Pluralizer.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Pluralizer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/ServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/ServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Str.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Str.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Traits/CapsuleManagerTrait.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Traits/CapsuleManagerTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/Traits/Macroable.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/Traits/Macroable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/ViewErrorBag.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/ViewErrorBag.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/composer.json" afterPath="$PROJECT_DIR$/vendor/illuminate/support/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/illuminate/support/helpers.php" afterPath="$PROJECT_DIR$/vendor/illuminate/support/helpers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/translation/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/CsvFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/CsvFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/FileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/FileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/IcuResFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/IcuResFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/IniFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/IniFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/JsonFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/JsonFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/MoFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/MoFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/PhpFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/PhpFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/PoFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/PoFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/QtFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/QtFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/XliffFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/XliffFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/YamlFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/YamlFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Loader/XliffFileLoader.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Loader/XliffFileLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/PluralizationRules.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/PluralizationRules.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Dumper/FileDumperTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Dumper/FileDumperTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Dumper/JsonFileDumperTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Dumper/JsonFileDumperTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Loader/XliffFileLoaderTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Tests/Loader/XliffFileLoaderTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Tests/TranslatorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Tests/TranslatorTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Tests/fixtures/withnote.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Tests/fixtures/withnote.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Translator.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Translator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/translation/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/intro.rst" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/intro.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/recipes.rst" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/recipes.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/extends.rst" afterPath="$PROJECT_DIR$/vendor/twig/twig/doc/tags/extends.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Template.php" afterPath="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Template.php" />
     </list>
     <ignored path="RainbowPHP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +287,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29767442">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state vertical-scroll-proportion="-19.272728">
+              <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
@@ -47,24 +299,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Oauth.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Oauth.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Middlewares/Oauth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.454545">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.6635945">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RainbowHelpers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Helpers/RainbowHelpers.php">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.727273">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#6#85#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Request.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,21 +332,9 @@
       <file leaf-file-name="Routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Config/Routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.636364">
+            <state vertical-scroll-proportion="0.0">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Core/Application.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2539682">
-              <caret line="497" column="20" selection-start-line="497" selection-start-column="20" selection-end-line="497" selection-end-column="20" />
-              <folding>
-                <element signature="e#113#146#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +342,7 @@
       <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Core/Router.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9347825">
+            <state vertical-scroll-proportion="0.0">
               <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
@@ -104,7 +352,7 @@
       <file leaf-file-name="NewController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.454545">
+            <state vertical-scroll-proportion="0.0">
               <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding>
                 <element signature="e#118#156#0#PHP" expanded="true" />
@@ -116,7 +364,7 @@
       <file leaf-file-name="Log.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Core/Log.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-42.18182">
+            <state vertical-scroll-proportion="0.0">
               <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
               <folding />
             </state>
@@ -136,7 +384,7 @@
       <file leaf-file-name="Config_sys.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Config/Config_sys.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.090909">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
               <folding />
             </state>
@@ -177,7 +425,6 @@
         <option value="$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Autoloader.php" />
         <option value="$PROJECT_DIR$/resources/views/test.html" />
         <option value="$PROJECT_DIR$/resources/views/test.html.twig" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Models/PeopleModel.php" />
         <option value="$PROJECT_DIR$/app/Controller/NewController.php" />
         <option value="$PROJECT_DIR$/env.php" />
@@ -204,6 +451,8 @@
         <option value="$PROJECT_DIR$/app/Config/Config_sys.php" />
         <option value="$PROJECT_DIR$/vendor/RainbowPHP/Core/Router.php" />
         <option value="$PROJECT_DIR$/app/Config/Routes.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/index.php" />
       </list>
     </option>
@@ -221,10 +470,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="138" />
+    <option name="y" value="303" />
+    <option name="width" value="1924" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -303,7 +552,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RainbowPHP" />
+              <option name="myItemId" value="symfony" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,11 +570,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RainbowPHP" />
+              <option name="myItemId" value="symfony" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
+              <option name="myItemId" value="http-foundation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,6 +605,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Middlewares" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -370,15 +623,11 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -389,17 +638,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\rainbow\public" />
-      <recent name="D:\BaiduYunDownload\web\RainbowPHP\vendor\RainbowPHP\Helpers" />
-      <recent name="D:\BaiduYunDownload\web\RainbowPHP\vendor" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\rainbow\app\config" />
       <recent name="D:\rainbow\app" />
       <recent name="D:\rainbow\public" />
       <recent name="D:\rainbow\app\Http" />
       <recent name="$PROJECT_DIR$/vendor/RainbowPHP/Core" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\rainbow" />
+      <recent name="D:\rainbow\public" />
+      <recent name="D:\BaiduYunDownload\web\RainbowPHP\vendor\RainbowPHP\Helpers" />
+      <recent name="D:\BaiduYunDownload\web\RainbowPHP\vendor" />
     </key>
   </component>
   <component name="RunManager">
@@ -462,32 +712,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="138" y="303" width="1924" height="1031" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14872068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15504292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972324" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972324" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.052771855" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.052575108" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27302274" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44827586" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23484848" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972324" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972324" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23484848" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972324" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -674,9 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="84" column="18" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
-          <folding>
-            <marker date="1464195994097" expanded="true" signature="33791:33797" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -684,14 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="3" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -699,7 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,9 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.090909">
           <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="e#6#84#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34570765">
           <caret line="384" column="15" selection-start-line="384" selection-start-column="15" selection-end-line="384" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,17 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="157" column="2" selection-start-line="157" selection-start-column="2" selection-end-line="157" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/HZ$D.031.2670/HZ$D.031.2671/web/bone/core/log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.545455">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="39" />
-          <folding>
-            <marker date="1441695090000" expanded="true" signature="59:63" placeholder=" Ĭ����־�� ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,7 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.787879">
           <caret line="1208" column="7" selection-start-line="1208" selection-start-column="7" selection-end-line="1208" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.285714">
           <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5151515">
           <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.363636">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,35 +1041,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.72727275">
           <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Helpers/RainbowHelpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.727273">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Core/Application.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2539682">
+        <state vertical-scroll-proportion="0.0">
           <caret line="497" column="20" selection-start-line="497" selection-start-column="20" selection-end-line="497" selection-end-column="20" />
           <folding>
-            <element signature="e#113#146#0#PHP" expanded="true" />
+            <element signature="e#113#146#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Middlewares/Oauth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.454545">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +1071,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.454545">
+        <state vertical-scroll-proportion="0.0">
           <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
           <folding>
             <element signature="e#118#156#0#PHP" expanded="true" />
@@ -876,7 +1081,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Config/Config_sys.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.090909">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
           <folding />
         </state>
@@ -884,7 +1089,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Core/Router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9347825">
+        <state vertical-scroll-proportion="0.0">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
@@ -892,7 +1097,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/RainbowPHP/Core/Log.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-42.18182">
+        <state vertical-scroll-proportion="0.0">
           <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
           <folding />
         </state>
@@ -900,19 +1105,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Config/Routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.636364">
+        <state vertical-scroll-proportion="0.0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14371258">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29767442">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state vertical-scroll-proportion="-19.272728">
+          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Middlewares/Oauth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6635945">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

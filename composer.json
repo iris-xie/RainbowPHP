@@ -10,6 +10,8 @@
   "require": {
     "noahbuscher/macaw": "dev-master",
     "illuminate/database": "*",
+    "joshcam/mysqli-database-class":"dev-master",
+    "symfony/http-foundation":"dev-master",
     "twig/twig": "dev-master"
   },
   "autoload": {

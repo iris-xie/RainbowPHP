@@ -11,11 +11,10 @@ require __DIR__ . '/../vendor/autoload.php';
 
 //echo BASE_PATH;
 
-$app = new \RainbowPHP\Core\Application(dirname(dirname(__FILE__)));
+$app = new RainbowPHP\Core\Application(dirname(dirname(__FILE__)));
 
-\Symfony\Component\HttpFoundation\Request::createFromGlobals();
+Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
-var_dump($_GET);
 $app->beforeSysMiddleWare();
 
 //需要进行处理参数

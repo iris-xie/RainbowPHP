@@ -1,12 +1,14 @@
-<?/**
+<?php
+/**
  * Created by PhpStorm.
  * User: asus
- * Date: 2016/5/12
- * Time: 0:08
+ * Date: 2016/6/2
+ * Time: 1:11
  */
-namespace App\MiddleWares;
+namespace App\Middle;
 
-class Oauth{
+class Oauth
+{
 
 
     function __call($name, $arguments)

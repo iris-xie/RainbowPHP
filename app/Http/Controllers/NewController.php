@@ -9,7 +9,8 @@ namespace App\Http\Controllers;
 use RainbowPHP\Core\RainbowController;
 use App\Http\Models\PeopleModel;
 use RainbowPHP\Core\Log;
-class NewController extends RainbowController{
+class NewController extends RainbowController
+{
 
     public function __construct()
     {

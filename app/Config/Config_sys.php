@@ -9,7 +9,7 @@ namespace App\Config;
 class Config_sys
 {
     public static $is_load   = [];
-    public static $base_path = 'D:rainbow';
+    public static $base_path = '/home/vagrant/web';
     public static $charset  = 'utf-8';
     public static $database = [
                             'driver' => 'mysql',

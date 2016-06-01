@@ -159,6 +159,7 @@ class Router {
         if (!is_object($route)) {
 
             $segments = self::descRoute($route);
+            var_dump($segments);
 
             // Instanitate controller
             $controller = new $segments[0]();
@@ -169,7 +170,7 @@ class Router {
                 echo "类 and 方法 不匹配";
             }elseif(!$paramter){
 
-                $controller->{$segments[1]}();
+                $controller->$segments[1]();
 
             }else{
 

@@ -12,24 +12,24 @@ class Config_middleware
 //不支持闭包函数，
  public static $beforeSys = [
 
-                '\App\MiddleWares\Oauth@checkOauth',
+                'App\Middle\Oauth@checkOauth',
 
  ];
 
 
  public static $beforeController =[
 
-                'App\Http\Controllers\NewController' => ['\App\MiddleWares\Oauth@continueOauth'],
+                'App\Http\Controllers\NewController' => ['App\Middle\Oauth@continueOauth'],
 
  ];
  public static $afterController =[
 
-               'App\Http\Controllers\NewController' => ['\App\MiddleWares\Oauth@afterOauth'],
+               'App\Http\Controllers\NewController' => ['App\Middle\Oauth@afterOauth'],
 
  ];
  public static $afterSys = [
 
-              '\App\MiddleWares\Oauth@closeOauth',
+              'App\Middle\Oauth@closeOauth',
 
  ];
 

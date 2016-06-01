@@ -238,7 +238,7 @@ class Application
 
     public function beforeSysMiddleWare(){
 
-        $this->beforeSysMiddleWare = (array)Config_middleware::$beforeSys;
+        $this->beforeSysMiddleWare = Config_middleware::$beforeSys;
 
         foreach($this->beforeSysMiddleWare as $val){
 

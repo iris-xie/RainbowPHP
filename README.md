@@ -7,20 +7,28 @@ Author have studied the CI Laravel symfony other well-known framework, combined 
 作者研究过CI Laravel symfony等知名框架，结合各个框架的优点，整合多个优秀组件写出了本框架。
 ##System Components
 Preliminary Planning 0.1 version of the framework is divided into Routing / Database / template / log / Cors/ HTTP-foundation  these parts.Database part uses the Eloquent ORM of Laravel, which is currently the most conveniently ORM in my mind;  but the current version just finished the Eloquent ORM simple integration, The next version will be a substantial EloquentORM optimized to improve its performance, and introduce PDO, to meet the needs of small and medium projects.Templates part using symfony template twig, and the next version will add support for native PHP templates.HTTP-foundation class using the symfony HTTP-foundation class library, Author will greatly optimize the library to improve performance infuture.Routing / log / Cors are written  by the author himself, routing section achieves a simple and restful routing that can cause a separate, single quote, please indicate the source and author when you do.<br/><br/>
-0.1版本的初步规划整个框架分为路由/MVC/Database/模板/日志/Cors/HTTP-foundation这几部分。其中Database使用了Laravel的EloquentORM,这是目前作者觉得使用最趁手的ORM;目前版本只做了EloquentORM的简单集成,下个版本会对EloquentORM进行大幅优化以提升其性能，并引入PDO,适应中小型项目的需要。模板部分使用了symfony的twig模板,下个版本会增加对原生PHP模板的支持。响应类采用了symfony的HTTP基础类库，未来会对这一类库大幅优化，提高性能。路由/日志/Cors部分由作者自己编写,路由部分实现了简单的restful路由并可以单独引起用,单独引用请标注来源及作者。
+0.1版本的初步规划整个框架分为路由/MVC/Database/模板/日志/Cors/HTTP-foundation这几部分。其中Database使用了Laravel的EloquentORM,这是目前作者觉得使用最趁手的ORM;目前版本只做了EloquentORM的简单集成,下个版本会对EloquentORM进行大幅优化以提升其性能，并引入PDO,适应中小型项目的需要。模板部分使用了symfony的twig模板,下个版本会增加对原生PHP模板的支持。响应类采用了symfony的HTTP基础类库，未来会对这一类库大幅优化，提高性能。路由/日志/Cors部分由作者自己编写,路由部分实现了简单的restful路由并可以单独引起用,单独引用请标注来源及作者。<br/><br/>
 ##The content in next version：
-PDO integration, native PHP template integration, eventlistener event module development, EloquentORM performance optimization, HTTP base class library performance optimization, file transfer library development stream for live video, etc., route cache feature development.<br/><br/>
-PDO集成，原生PHP模板集成，eventlistener事件模块开发,EloquentORM性能优化，HTTP基础类库性能优化，针对视频直播等的流文件传输类库开发,路由缓存功能开发。
+PDO integration, native PHP template integration, eventlistener event module development, EloquentORM performance optimization, HTTP HTTP-foundation class library performance optimization, file transfer class library development for video stream etc, route cache feature development.<br/><br/>
+PDO集成，原生PHP模板集成，eventlistener事件模块开发,EloquentORM性能优化，HTTP基础类库性能优化，针对视频直播等的流文件传输类库开发,路由缓存功能开发。<br/><br/>
 
-#RainbowPHP的用法
-RainbowPHP的目录分为四部分，app/public/storage/vendor目录，下面逐一介绍：
---注意，RainbowPHP遵守psr-4规范，目录结构与命名空间保持一致，所以在此规定，所有需要composer自动加载的类库，其命名空间/目录/类名均采用大驼峰命名法，即首字母大写，多词组成词每个词首字母也大写；方法名小驼峰命名法，即首字母小写，多词组成词每第二个以后的每个词首字母也大写；控制器名称后加Controller,用以标注其与普通类的区别；方法名不添加默认后缀。
-##app目录
-app目录是这个网站的主目录，是我们配置文件，程序代码，中间件，未来程序中自定义的service，都在这一目录中，理论上如果你写的是一个纯restful后端服务响应，只需将这一文件间拷贝走即可。
-app目录目前有四个文件夹，分别是Config--配置文件所在目录，Middleware--中间件所在目录,Routes--路由坐在地址，Http--程序代码主目录，包含MVC主要功能的Controllers/Models/Views均在这个目录。不过需要注意的是，个人并不推荐将模板需要引入的外部文件放入app\Http\Views目录中，而是应当放入public目录中，即与index.php处在同一目录。当然程序员可以根据自身需求扩展这一目录结构，譬如在app目录下增加Services目录 用于放置常用单独功能组件。
-##public目录
-public目录中index.php是该框架的单一入口文件，.htaccess文件为apache服务器定义了重写规则，resources目录是该框架默认方式模板引用的外部文件所在，程序要可以根据自己的需要自由放置。
-##storage目录
+#RainbowPHP usage
+##Naming Conventions
+Note, Rainbow PHP comply psr-4 specification, the directory structure is consistent with the namespace。So this provision, all need composer automatically loaded library, its namespace / directory / class names are used in upper camel case, that the first letter capitalized, multi-word word is also the first letter of each word capitalized;Method names are used in lower camel case, that is the first letter lowercase, each multi-word word word per second after the first letter also capitalized;The controller names must add Controller suffix, used to identify and distinguish its normal class; do not add the default method name suffixes.<br/><br/>
+注意，RainbowPHP遵守psr-4规范，目录结构与命名空间保持一致。所以在此规定，所有需要composer自动加载的类库，其命名空间/目录/类名均采用大驼峰命名法，即首字母大写，多词组成词每个词首字母也大写；方法名小驼峰命名法，即首字母小写，多词组成词每第二个以后的每个词首字母也大写；控制器名称后加Controller,用以标注其与普通类的区别；方法名不添加默认后缀。<br/><br/>
+
+Rainbow PHP directory is divided into four parts, app / public / storage / vendor directory, one by one the following description:<br/><br/>
+RainbowPHP的目录分为四部分，app/public/storage/vendor目录，下面逐一介绍：<br/><br/>
+
+##app directory
+app directory is the home directory of the site ，that our configuration files, codes, middlewares, future programs customized service, are in this directory.Theoretically, if you are writing a pure new restful backend service response, simply copy files from this directory.app directory currently has four folders, which are Config-- configuration file directory, Middleware-- Middleware directory, Routes-- routing directory, Http-- code home directory, in which the main functions Controllers MVC / Models / Views exist. But note that the author does not recommend an external file to templates should be introduced into the app \ Http \ Views directory, but should be placed in the public directory, that is in the same directory with index.php.Of course, programmers can extend this directory structure according to their needs, such as increasing the Services Directory for placing separate functional components commonly used in the app directory.<br/><br/>
+
+
+app目录是这个网站的主目录，是我们配置文件，程序代码，中间件，未来程序中自定义的service，都在这一目录中。理论上如果你写的是一个纯restful后端服务响应，只需将这一文件间拷贝走即可。app目录目前有四个文件夹，分别是Config--配置文件所在目录，Middleware--中间件所在目录,Routes--路由所在目录，Http--程序代码主目录，包含MVC主要功能的Controllers/Models/Views均在这个目录。不过需要注意的是，个人并不推荐将模板需要引入的外部文件放入app\Http\Views目录中，而是应当放入public目录中，即与index.php处在同一目录。当然程序员可以根据自身需求扩展这一目录结构，譬如在app目录下增加Services目录，用于放置常用单独功能组件。
+##public directory
+In public directory index.php file is a single entry of the framework, .htaccess file defines rewrite rules for the apache server, resources directory is an default directory for external file of the template, which can be freely positioned according to programmer's needs.<br/><br/>
+public目录中index.php是该框架的单一入口文件，.htaccess文件为apache服务器定义了重写规则，resources目录是该框架默认方式模板引用的外部文件所在，程序员要可以根据自己的需要自由放置。<br/><br/>
+##storage directory
 storage目录是框架用于储存临时文件/日志文件/及缓存文件的目录。这个目录可以随时删除来清除缓存，在系统启动的时候会重新生成这一目录，请不要将代码/以及需要长时间存放的资源放置与此目录。
 ##vendor目录
 vendor目录并不需要做任何设置，它里面的内容由composer自动生成，熟悉composer的同学可以轻松上手。PS，更改vendor目录里的内容并不是一个良好的习惯，轮子就是轮子，改造轮子就丧失了原本使用轮子的意义，所以希望大家轻易不要改变vendor里的代码。我们的框架的核心目录是vendor/RainbowPHP,如果有些同学对本框架源码感兴趣，请详细阅读本目录中的内容。

@@ -6,6 +6,10 @@ RainbowPHP 是专门针对PHP7 LNMP环境下开发restful接口而创作的。�
 0.1版本的初步规划整个框架分为路由/MVC/Database/模板/日志/Cors这几部分。其中Database使用了Laravel的EloquentORM,这是目前作者觉得使用最趁手的ORM,目前版本只做了 Eloquent ORM的简单集成；下个版本会对EloquentORM进行大幅优化以提升其性能，并引入PDO,适应中小型项目的需要。模板部分使用了symfony的twig模板；下个版本会增加对原生PHP模板的支持。响应类采用了symfony的HTTP基础类库，未来会对这一类库大幅优化，提高性能。路由/日志/Cors部分由作者自己编写,路由部分实现了简单的restful路由并可以单独引起用,单独引用请标注来源及作者。
 
 #RainbowPHP的用法
+RainbowPHP的目录分为四部分，app/public/storage/vendor目录，下面逐一介绍：
+##app目录
+app目录是这个网站的主目录，是我们配置文件，程序代码，中间件，未来程序中自定义的service，都在这一目录中，理论上如果你写的是一个纯restful后端服务响应，只需将这一文件间拷贝走即可。
+
 
 
 

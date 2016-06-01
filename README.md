@@ -1,5 +1,5 @@
 #RainbowPHP brief introduction
-Rainbow PHP is created specifically for the development of the restful interface under PHP7-LNMP environment.Pro-test the code in the context of achieving the same logic, QPS of RainbowPHP is three to five times against Lumen/Laravel.Currently, in a production environment, in response to a single time-consuming system is controlled in less than 80ms.<br/><br/>
+Rainbow PHP is created specifically for the development of the restful interface under PHP7-LNMP environment.Pro-test the code in the context of achieving the same logic, QPS of RainbowPHP is three to five times against Lumen/Laravel.Currently, in a production environment, the response time to a system cosumed is controlled in less than 80ms.<br/><br/>
 RainbowPHP 是专门针对PHP7 LNMP环境下开发restful接口而创作的。亲测在实现同样代码逻辑的前提下，RainbowPHP的QPS为Lumen的三至五倍。目前，在生产环境中，单次响应系统所用耗时被控制在了80ms以内。
 
 #RainbowPHP Components

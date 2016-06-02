@@ -2,7 +2,7 @@
 namespace App\Config;
 
 use RainbowPHP\Core\Route;
-class Eventlistener
+class ConfigEventlistener
 {
 
 public static $eventList = [

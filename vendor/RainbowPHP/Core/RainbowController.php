@@ -11,32 +11,18 @@ use App\Config\Config_sys;
 class RainbowController{
 
     protected $twig;
+    protected $container;
 
     protected $database;
     public static $instance;
 
     public function __construct()
     {
-        //$config = include BASE_PATH.'/env.php';
-        if (isset(Config_sys::$is_load[__CLASS__]))
-        {
-                    return Config_sys::$is_load[__CLASS__];
-        }
-        //echo time().microtime();
+        $serviceList = require BASE_PATH.'/app/Config/Services.php';
+        $parameters = require BASE_PATH.'/app/Config/parameters.php';
 
-        if(in_array('view',Config_sys::$auto_load)){
+        $this->container = new Container($serviceList,$parameters);
 
-            $this->loadView();
-
-        }
-        if(in_array('database',Config_sys::$auto_load)) {
-            $this->loadDatabase();
-
-        }
-
-        self::$instance =& $this;
-
-        Config_sys::$is_load[__CLASS__] = &$this;
     }
 /*    public function __callstatic($name,$arguments)
     {
@@ -48,6 +34,7 @@ class RainbowController{
     {  
         return self::$instance;  
     }
+
 
     public function load ($name)
     {

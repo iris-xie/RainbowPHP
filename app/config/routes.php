@@ -13,7 +13,7 @@ use RainbowPHP\Core\Router;
     $app = new NewController();
     return $app->index();S
 });*/
-Router::get('/fuck', 'App\Http\Controllers\NewController@index');
+Router::get('/fuck', 'App\Http\Controllers\ContainerController@testContainer');
 
 Router::get('/w/(:all)', function($fu) {
     echo '未匹配到路由<br>'.$fu;

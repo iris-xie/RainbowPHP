@@ -7,7 +7,8 @@
  */
 
 require __DIR__ . '/../vendor/autoload.php';
-//echo time().microtime();//define(BASE_PATH,dirname(dirname(__FILE__)));
+//echo time().microtime();
+define('BASE_PATH',dirname(dirname(__FILE__)));
 
 //echo BASE_PATH;
 
@@ -20,7 +21,6 @@ $app->beforeSysMiddleWare();
 //需要进行处理参数
 // 路由配置
 require __DIR__ .'/../app/Config/routes.php';
-
 
 $app->afterSysMiddleWare();
 

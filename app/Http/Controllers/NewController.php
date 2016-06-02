@@ -23,15 +23,17 @@ class NewController extends RainbowController
 
         //echo time().microtime();
 
-        $INF0= PeopleModel::getOne(1);
-        echo '<br/>获取数据<br/>';
+
+        $this->loadDatabase();
+
         $log = Log::getInstance();
 
         $log ->add('-----'.time());
         //echo time().microtime();
-
+        $this->loadView();
         echo $this->view->render('test.html.twig', array('the' => 'variables', 'go' => 'here'));
         //echo time().microtime();
 
     }
+
 }

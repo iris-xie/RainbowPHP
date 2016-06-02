@@ -61,14 +61,16 @@ class Router {
      */
     public static function dispatch(){
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        var_dump($uri);
+
         $method = $_SERVER['REQUEST_METHOD'];
 
         $searches = array_keys(static::$patterns);
         $replaces = array_values(static::$patterns);
 
         $found_route = false;
-        self::$routes = str_replace('//', '/', self::$routes);
-
+        self::$routes = str_replace('///', '/', self::$routes);
+        var_dump(self::$routes);
         // Check if route is defined without regex
         if (in_array($uri, self::$routes)) {
             $route_pos = array_keys(self::$routes, $uri);
@@ -103,7 +105,7 @@ class Router {
 
                         // Remove $matched[0] as [1] is the first parameter.
                         array_shift($matched);
-                        self::beforeControllerMiddleware(self::$callbacks[$route]);
+                       self::beforeControllerMiddleware(self::$callbacks[$route]);
 
                         self::runRoute(self::$callbacks[$route],$matched);
 
@@ -194,26 +196,27 @@ class Router {
     {
         $segments = self::descRoute($route);
 
-        $middlewares = Config_middleware::$beforeController[$segments[0]];
+        if (in_array($segments[0],Config_middleware::$beforeController)) {
+            $middlewares = Config_middleware::$beforeController[$segments[0]];
 
-        foreach($middlewares as $val){
+            foreach ($middlewares as $val) {
 
-            self::runRoute($val);
+                self::runRoute($val);
+            }
         }
-
     }
 
     public static function afterControllerMiddleware($route)
     {
         $segments = self::descRoute($route);
+        if (in_array($segments[0],Config_middleware::$afterController)) {
+            $middlewares = Config_middleware::$afterController[$segments['0']];
+            //$middlewares = Config_middleware::$afterController[$controller];
 
-        $middlewares = Config_middleware::$afterController[$segments['0']];
-        //$middlewares = Config_middleware::$afterController[$controller];
+            foreach ($middlewares as $val) {
 
-        foreach($middlewares as $val){
-
-            self::runRoute($val);
+                self::runRoute($val);
+            }
         }
-
     }
 }

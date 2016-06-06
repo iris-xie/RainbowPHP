@@ -6,7 +6,7 @@
  * Time: 下午2:39
  */
  
- if(!extension_loaded('YAC')) exit('本框架严重依赖YAC扩展,请先安装YAC扩展');
+ //if(!extension_loaded('YAC')) exit('本框架严重依赖YAC扩展,请先安装YAC扩展');
 
 require __DIR__ . '/../vendor/autoload.php';
 

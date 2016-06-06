@@ -6,10 +6,10 @@
  * Time: 下午3:09
  */
 use RainbowPHP\Support\Str;
- function load_class($class)  
+ function &load_class($class)  
     {  
         //记录加载过的类  
-        static $load_classes = array();  
+        static &$load_classes = array();  
   
         // 已经加载过，直接读取并返回  
         if (isset($load_classes[$class]))  
@@ -47,7 +47,7 @@ use RainbowPHP\Support\Str;
         }
  
         // 追踪记录下刚才加载的类，is_loaded()函数在下面  
-        is_loaded($class);  
+        &is_loaded($class);  
   
         $loaded_classes[$class] = new $class();  
         return $_classes[$class];  
